@@ -1,442 +1,472 @@
-<title>Mikael Yemane</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mikael Yemane · Principal ML Platform Lead</title>
+<meta name="description" content="Principal ML Platform Lead building MLOps platforms for aviation and defense. 58% lower compute cost, a $10M+ Navy contract won, seven years of production ML.">
+<meta name="theme-color" content="#173a6b">
+<link rel="canonical" href="https://mikaelyemane.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23173a6b'/%3E%3Crect x='3' y='3' width='26' height='26' fill='none' stroke='%23eaf1fa' stroke-width='2'/%3E%3Ctext x='16' y='22' font-family='Arial Narrow,Arial' font-weight='700' font-size='15' fill='%23eaf1fa' text-anchor='middle'%3EMY%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mikaelyemane.github.io/">
+<meta property="og:title" content="Mikael Yemane · Principal ML Platform Lead">
+<meta property="og:description" content="Principal ML Platform Lead building MLOps platforms for aviation and defense. 58% lower compute cost, a $10M+ Navy contract won, seven years of production ML.">
+<meta property="og:image" content="https://mikaelyemane.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mikaelyemane.github.io/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one engineering drawing set. Each section is a sheet with a sheet number; the aircraft are traced from real photos as the drawings; results are redline callouts. Deliberately single-theme (cyanotype). */
+/* Layout: one engineering drawing sheet. Condensed display type for headings, a readable sans for body, mono only for small labels. Single deliberate cyanotype theme. */
 :root{
-  --cyan:#173a6b; --deep:#102c54; --vellum:#eaf1fa; --pencil:#9db6d6; --redline:#ff6b5a; --grid:rgba(234,241,250,.07); --rule:rgba(234,241,250,.45);
+  --cyan:#173a6b; --deep:#102c54; --vellum:#eaf1fa; --soft:#d3e0f0; --pencil:#9db6d6; --redline:#ff6b5a;
+  --rule:rgba(234,241,250,.4); --faint:rgba(234,241,250,.18); --grid:rgba(234,241,250,.06);
   --display:"Archivo Narrow","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--cyan);color:var(--vellum);font-family:var(--display);font-size:1.12rem;line-height:1.55;
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px),linear-gradient(rgba(234,241,250,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(234,241,250,.035) 1px,transparent 1px);
-  background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+body{margin:0;background:var(--cyan);color:var(--vellum);font-family:var(--body);font-size:1.05rem;line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
 a{color:inherit}
+a:hover{color:var(--redline)}
 :focus-visible{outline:2px solid var(--redline);outline-offset:3px}
-h1,h2,h3{margin:0;text-transform:uppercase;text-wrap:balance;line-height:.95;font-weight:700;letter-spacing:.005em}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:700;line-height:1.02;text-wrap:balance}
 p{margin:0}
-.an{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pencil)}
-.red{color:var(--redline)}
+.lab{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pencil)}
 .num{font-variant-numeric:tabular-nums}
+.red{color:var(--redline)}
 
-.frame{max-width:1280px;margin:clamp(12px,3vw,32px) auto;margin-inline:max(16px,calc((100% - 1280px)/2));border:2px solid var(--vellum);position:relative}
-.frame::before,.frame::after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--vellum)}
-.frame::before{top:-9px;left:-9px}.frame::after{bottom:-9px;right:-9px}
+.frame{max-width:1200px;margin:24px auto;margin-inline:max(16px,calc((100% - 1200px)/2));border:2px solid var(--vellum)}
 .pad{padding-inline:clamp(16px,4vw,48px)}
 
-/* nav */
-.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding-block:16px;border-bottom:1px solid var(--rule)}
-.brand{font-weight:700;font-size:1.45rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
-.nav nav{display:flex;gap:clamp(12px,2vw,26px);flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
-.nav nav a{text-decoration:none;color:var(--pencil)}
-.nav nav a:hover{color:var(--vellum)}
-.nav nav a.c{color:var(--redline)}
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px;border-bottom:1px solid var(--rule)}
+.brand{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:.03em;text-transform:uppercase;text-decoration:none}
+.top nav{display:flex;gap:24px;align-items:center;font-size:.95rem}
+.top nav a{text-decoration:none;color:var(--soft)}
+.top nav a.c{color:var(--cyan);background:var(--vellum);padding:7px 14px;font-weight:600}
+.top nav a.c:hover{background:var(--redline);color:var(--deep)}
+@media (max-width:720px){.top nav a:not(.c){display:none}}
 
 /* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,3vw,40px);align-items:center;padding-block:clamp(36px,6vw,72px) 36px}
-.hero h1{font-size:clamp(2.6rem,5.4vw,4.6rem);margin:18px 0 22px}
-.hero h1 u{text-decoration:none;border-bottom:.07em solid var(--redline)}
-.hero .sub{font-size:clamp(1.1rem,1.6vw,1.3rem);max-width:34em;color:#d6e3f3}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(40px,6vw,72px) 40px}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);text-transform:uppercase;letter-spacing:.005em;margin:14px 0 20px}
+.hero h1 span{color:var(--redline)}
+.hero .sub{font-size:1.15rem;color:var(--soft);max-width:34em}
+.seeking{margin-top:22px;border-left:3px solid var(--redline);padding:4px 0 4px 16px;display:grid;gap:4px}
+.seeking b{font-family:var(--display);font-size:1.2rem;font-weight:600;letter-spacing:.01em}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:14px 20px;background:var(--redline);color:var(--deep);font-weight:500;text-decoration:none;border:1px solid var(--redline);cursor:pointer;display:inline-block}
-.btn.o{background:none;border-color:var(--vellum);color:var(--vellum)}
-.btn:hover{filter:brightness(1.08)}
-.dwg{position:relative;min-width:0;padding:34px 8px 40px}
-.dwg svg{width:100%;height:auto;display:block;color:var(--vellum)}
-.form-air{width:88%}
-.form-f18{position:absolute;right:0;bottom:44px;width:40%}
-.dwg .ctr{position:absolute;left:0;right:0;top:50%;border-top:1px dashed rgba(157,182,214,.5)}
-.dim{position:absolute;left:4%;right:4%;bottom:10px;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--pencil);text-transform:uppercase;white-space:nowrap}
-.dim::before,.dim::after{content:"";flex:1;height:0;border-top:1px solid var(--pencil)}
-.dim b{font-weight:400}
-.cl{position:absolute;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--redline);text-transform:uppercase;display:flex;align-items:center;gap:6px;white-space:nowrap}
-.cl i{display:block;width:34px;height:1px;background:var(--redline)}
-.dlab{position:absolute;top:6px;left:8px}
-@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.btn{display:inline-block;font-weight:600;font-size:.98rem;padding:12px 20px;text-decoration:none;border:1px solid var(--vellum);background:var(--vellum);color:var(--deep);cursor:pointer;font-family:var(--body)}
+.btn:hover{background:var(--redline);border-color:var(--redline);color:var(--deep)}
+.btn.o{background:transparent;color:var(--vellum)}
+.btn.o:hover{border-color:var(--redline);color:var(--redline)}
+.hero-art{position:relative;min-width:0;padding-bottom:10px}
+.hero-art .a{width:92%}
+.hero-art .f{position:absolute;right:0;bottom:0;width:40%}
+.hero-art svg{display:block;width:100%;height:auto;color:var(--vellum)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero-art{max-width:520px}}
 
 /* proof */
 .proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.proof div{padding:20px clamp(14px,3vw,36px);border-left:1px solid var(--rule);display:grid;gap:4px;align-content:start}
+.proof div{padding:22px clamp(14px,2.5vw,32px);border-left:1px solid var(--rule);display:grid;gap:6px;align-content:start}
 .proof div:first-child{border-left:none}
-.proof b{font-size:clamp(2.4rem,4.8vw,3.6rem);font-weight:700;line-height:1}
-.proof span{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--pencil)}
+.proof b{font-family:var(--display);font-size:clamp(2.2rem,4.4vw,3.2rem);line-height:1}
+.proof span{font-size:.92rem;color:var(--soft);line-height:1.4}
 @media (max-width:760px){.proof{grid-template-columns:1fr 1fr}.proof div:nth-child(3){border-left:none}.proof div:nth-child(n+3){border-top:1px solid var(--rule)}}
 
-/* sheet */
-.sheet{padding-block:clamp(48px,7vw,84px);border-top:1px solid var(--rule)}
-.shead{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:10px}
-.shead h2{font-size:clamp(2.2rem,5.2vw,4rem)}
-.shead .sn{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;border:1px solid var(--vellum);padding:6px 10px;text-transform:uppercase;white-space:nowrap}
-.intro{max-width:40em;color:#d6e3f3;margin-top:14px}
+/* sections */
+.sec{padding-block:clamp(48px,7vw,80px);border-top:1px solid var(--rule)}
+.sec:first-of-type{border-top:none}
+.head{display:grid;gap:10px;max-width:46em;margin-bottom:32px}
+.head h2{font-size:clamp(2rem,4.4vw,3.2rem);text-transform:uppercase}
+.head p{color:var(--soft);font-size:1.08rem}
 
-/* details (work) */
-.detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,48px);align-items:center;padding-block:36px;border-top:1px dashed rgba(234,241,250,.35);margin-top:28px}
-.detail h3{font-size:clamp(2rem,3.8vw,2.9rem);margin:10px 0 6px}
-.detail .t{color:var(--pencil)}
-.detail p.d{margin-top:14px;max-width:32em}
-.detail .res{margin-top:16px;display:flex;gap:10px 24px;flex-wrap:wrap}
-.detail .res span{font-family:var(--mono);font-size:.78rem;color:var(--redline);text-transform:uppercase;letter-spacing:.04em}
-.detail .res b{display:block;font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--vellum)}
-@media (max-width:900px){.detail{grid-template-columns:1fr}.detail .dwg{order:-1}}
-.others{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin-top:24px}
-.others div{padding:18px 20px;display:grid;gap:4px;border-left:1px solid var(--rule);align-content:start}
-.others div:first-child{border-left:none}
-.others h3{font-size:1.25rem}
-.others p{font-size:.98rem;color:var(--pencil)}
-@media (max-width:900px){.others{grid-template-columns:1fr 1fr}.others div:nth-child(3){border-left:none}.others div:nth-child(n+3){border-top:1px solid var(--rule)}}
-@media (max-width:480px){.others{grid-template-columns:1fr}.others div{border-left:none}.others div+div{border-top:1px solid var(--rule)}}
+/* leadership */
+.lead{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--rule)}
+.lead div{padding:18px 24px 18px 0;border-bottom:1px solid var(--faint);display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;align-items:baseline}
+.lead div:nth-child(2n){padding-left:24px;border-left:1px solid var(--faint)}
+.lead p{font-size:1.02rem}
+.lead div:last-child:nth-child(odd){grid-column:1/-1}
+@media (max-width:820px){.lead{grid-template-columns:1fr}.lead div:nth-child(2n){padding-left:0;border-left:none}.lead div{grid-template-columns:1fr;gap:4px}}
 
-/* offers */
-.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);margin-top:32px}
-.offer{padding:24px;display:grid;gap:12px;align-content:start;border-left:1px solid var(--rule)}
+/* work */
+.job{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center;padding-block:32px;border-top:1px dashed var(--rule)}
+.job:first-of-type{border-top:none;padding-top:0}
+.job h3{font-size:clamp(1.8rem,3.2vw,2.5rem);text-transform:uppercase;margin:8px 0 4px}
+.job .role{color:var(--pencil)}
+.job p.d{margin-top:14px;color:var(--soft)}
+.res{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px 28px}
+.res div{display:grid;gap:2px}
+.res b{font-family:var(--display);font-size:2rem;line-height:1}
+.res span{font-size:.85rem;color:var(--pencil)}
+.job figure{margin:0;min-width:0}
+.job svg{display:block;width:100%;height:auto;color:var(--vellum)}
+.job figcaption{margin-top:10px}
+.pn{display:none}
+@media (max-width:560px){.pw{display:none}.pn{display:block}}
+@media (max-width:900px){.job{grid-template-columns:1fr}.job figure{order:-1}}
+.more{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin-top:28px}
+.more div{padding:18px 20px;border-left:1px solid var(--rule);display:grid;gap:6px;align-content:start}
+.more div:first-child{border-left:none}
+.more h3{font-size:1.25rem;text-transform:uppercase}
+.more p{font-size:.95rem;color:var(--soft)}
+@media (max-width:900px){.more{grid-template-columns:1fr 1fr}.more div:nth-child(3){border-left:none}.more div:nth-child(n+3){border-top:1px solid var(--rule)}}
+@media (max-width:480px){.more{grid-template-columns:1fr}.more div{border-left:none}.more div+div{border-top:1px solid var(--rule)}}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
+.caps div{padding:20px 22px 20px 0;display:grid;gap:6px;align-content:start;border-bottom:1px solid var(--faint)}
+.caps div:not(:nth-child(3n+1)){padding-left:22px;border-left:1px solid var(--faint)}
+.caps h3{font-size:1.3rem}
+.caps p{font-size:.97rem;color:var(--soft)}
+@media (max-width:820px){.caps{grid-template-columns:1fr}.caps div:not(:nth-child(3n+1)){padding-left:0;border-left:none}}
+
+/* contract */
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--rule)}
+.offer{padding:22px;display:grid;gap:10px;align-content:start;border-left:1px solid var(--rule)}
 .offer:first-child{border-left:none}
-.offer h3{font-size:1.9rem}
-.offer p{color:#d6e3f3}
-.offer ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:1rem}
-.offer li{padding-left:18px;position:relative}
-.offer li::before{content:"+";position:absolute;left:0;color:var(--redline);font-family:var(--mono)}
-.offer .out{border-top:1px dashed var(--rule);padding-top:12px;font-family:var(--mono);font-size:.72rem;color:var(--pencil);text-transform:uppercase;letter-spacing:.04em}
+.offer h3{font-size:1.6rem;text-transform:uppercase}
+.offer p{color:var(--soft);font-size:.98rem}
+.offer ul{margin:0;padding-left:1.1em;display:grid;gap:5px;font-size:.95rem}
+.offer .out{border-top:1px dashed var(--rule);padding-top:10px;font-size:.88rem;color:var(--pencil)}
 @media (max-width:900px){.offers{grid-template-columns:1fr}.offer{border-left:none}.offer+.offer{border-top:1px solid var(--rule)}}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);border-top:none;counter-reset:s}
-.steps li{counter-increment:s;padding:16px 20px;display:grid;gap:2px;border-left:1px solid var(--rule)}
-.steps li:first-child{border-left:none}
-.steps b{font-size:1.35rem;text-transform:uppercase}
-.steps b::before{content:counter(s) " ";color:var(--redline);font-family:var(--mono);font-size:.9rem;font-weight:400}
-.steps span{color:var(--pencil);font-size:.95rem}
-@media (max-width:760px){.steps{grid-template-columns:1fr 1fr}.steps li:nth-child(3){border-left:none}.steps li:nth-child(n+3){border-top:1px solid var(--rule)}}
-.modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:18px;border:1px solid var(--rule)}
-.modes div{padding:20px 24px;display:grid;gap:6px}
-.modes div+div{border-left:1px solid var(--rule)}
-.modes h3{font-size:1.5rem}
-.modes p{color:var(--pencil)}
-@media (max-width:700px){.modes{grid-template-columns:1fr}.modes div+div{border-left:none;border-top:1px solid var(--rule)}}
+.steps{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:s}
+.steps li{counter-increment:s;padding:16px 18px 0 0;border-top:2px solid var(--vellum);display:grid;gap:4px;align-content:start}
+.steps li+li{padding-left:18px}
+.steps b{font-family:var(--display);font-size:1.25rem;text-transform:uppercase}
+.steps b::before{content:counter(s) "  ";color:var(--redline);font-family:var(--mono);font-size:.85rem;font-weight:400}
+.steps span{color:var(--soft);font-size:.95rem}
+@media (max-width:760px){.steps{grid-template-columns:1fr 1fr;row-gap:22px}.steps li:nth-child(3){padding-left:0}}
 
 /* real estate */
-.re{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:30px}
-.re-stats{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--rule)}
-.re-stats div{padding:20px 22px;display:grid;gap:4px;align-content:start}
-.re-stats div:nth-child(2n){border-left:1px solid var(--rule)}
-.re-stats div:nth-child(n+3){border-top:1px solid var(--rule)}
+.re{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 .re>*{min-width:0}
-.re-stats b.w{font-size:clamp(1.3rem,2.4vw,2rem);overflow-wrap:normal;padding-top:.35em}
-.re-stats b{font-size:clamp(1.5rem,4vw,3rem);line-height:1;overflow-wrap:anywhere}
-.re-list{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-.re-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline}
-.re-list li i{font-style:normal;font-family:var(--mono);font-size:.72rem;color:var(--redline)}
-.elev{position:relative;padding:28px 6px 44px;min-width:0}
-.elev svg{width:100%;height:auto;display:block;color:var(--vellum);max-height:680px}
-.re-note{margin-top:18px;font-family:var(--mono);font-size:.72rem;color:var(--pencil);letter-spacing:.04em;text-transform:uppercase}
-@media (max-width:900px){.re{grid-template-columns:1fr}}
+.re p{color:var(--soft);font-size:1.08rem;max-width:34em}
+.re-nums{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:22px}
+.re-nums div{display:grid;gap:2px}
+.re-nums b{font-family:var(--display);font-size:2.2rem;line-height:1}
+.re-nums span{font-size:.88rem;color:var(--pencil)}
+.re figure{margin:0}
+.re svg{display:block;width:100%;height:auto;max-height:420px;color:var(--vellum)}
+@media (max-width:820px){.re{grid-template-columns:1fr}.re figure{max-width:360px}}
 
 /* scorecard */
-.sc{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);margin-top:32px;align-items:start}
-.q{padding:14px 0;border-bottom:1px dashed rgba(234,241,250,.3)}
+.sc{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start}
+.q{padding:14px 0;border-bottom:1px dashed var(--faint)}
 .q:first-child{border-top:1px solid var(--rule)}
 .q fieldset{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
-.q legend{padding:0;display:flex;gap:12px;font-size:1.08rem}
-.q legend i{font-style:normal;font-family:var(--mono);font-size:.68rem;color:var(--pencil);padding-top:5px;min-width:6em;text-transform:uppercase;letter-spacing:.06em}
-.opts{display:flex;flex-wrap:wrap;gap:8px;padding-left:calc(6em + 12px)}
+.q legend{padding:0;font-weight:500}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
 .opts label{cursor:pointer}
 .opts input{position:absolute;opacity:0;pointer-events:none}
-.opts span{display:inline-block;font-size:.92rem;padding:6px 12px;border:1px solid rgba(234,241,250,.4)}
+.opts span{display:inline-block;font-size:.9rem;padding:6px 12px;border:1px solid rgba(234,241,250,.4)}
 .opts input:checked+span{background:var(--vellum);color:var(--deep);border-color:var(--vellum)}
 .opts input:focus-visible+span{outline:2px solid var(--redline);outline-offset:2px}
-@media (max-width:560px){.opts{padding-left:0}.q legend{flex-direction:column;gap:2px}}
-.sc-result{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);border:2px solid var(--vellum);background:var(--deep);padding:22px;display:grid;gap:14px}
+.sc-out{position:sticky;top:16px;border:2px solid var(--vellum);background:var(--deep);padding:22px;display:grid;gap:14px}
 .score{display:flex;align-items:baseline;gap:10px}
-.score b{font-size:4.8rem;line-height:.85}
-.grade{font-size:1.6rem;text-transform:uppercase;color:var(--redline);font-weight:700;line-height:1}
-.bars{display:grid;gap:7px}
-.bar{display:grid;grid-template-columns:6.2em minmax(0,1fr) 2.4em;gap:10px;align-items:center;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--pencil)}
-.bar div{height:8px;border:1px solid rgba(234,241,250,.35);position:relative}
-.bar div i{position:absolute;inset:0 auto 0 0;background:var(--vellum);transition:width .3s}
-.bar div i.low{background:var(--redline)}
-.bar em{font-style:normal;text-align:right}
-.recs{margin:0;padding-left:1.1em;display:grid;gap:8px;font-size:1rem}
-.sc-result .note{font-family:var(--mono);font-size:.66rem;color:var(--pencil)}
-@media (max-width:900px){.sc{grid-template-columns:1fr}.sc-result{position:static}}
-@media (prefers-reduced-motion: reduce){.bar div i{transition:none}}
+.score b{font-family:var(--display);font-size:4.4rem;line-height:.85}
+.grade{font-family:var(--display);font-size:1.5rem;text-transform:uppercase;color:var(--redline);line-height:1}
+.recs{margin:0;padding-left:1.1em;display:grid;gap:8px;font-size:.97rem}
+.sc-out .note{font-size:.8rem;color:var(--pencil)}
+@media (max-width:900px){.sc{grid-template-columns:1fr}.sc-out{position:static;order:-1}}
 
-/* thinking */
-.think{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);margin-top:32px;align-items:start}
-.book{display:grid;grid-template-columns:140px minmax(0,1fr);gap:22px;align-items:start}
-.cover{width:140px;max-width:100%;aspect-ratio:2/3;border:2px solid var(--vellum);padding:14px 12px;display:flex;flex-direction:column;justify-content:space-between;background:var(--deep)}
-.cover span{font-weight:700;font-size:1.4rem;line-height:.95;text-transform:uppercase}
-.cover small{font-family:var(--mono);font-size:.58rem;color:var(--redline)}
-.book h3{font-size:2rem;margin:6px 0 10px}
-.book p{color:#d6e3f3}
-.book a{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--redline)}
-.talk{margin-top:26px;border-top:1px solid var(--rule);padding-top:16px;display:grid;gap:4px}
-.talk strong{font-size:1.5rem;text-transform:uppercase}
-.talk span{color:var(--pencil)}
-.notes{margin:0;padding:0;list-style:none;display:grid;gap:0;counter-reset:n}
-.notes li{counter-increment:n;display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;padding-block:16px;border-top:1px dashed rgba(234,241,250,.3)}
-.notes li:first-child{border-top:none;padding-top:0}
-.notes li::before{content:counter(n);width:30px;height:30px;border:1px solid var(--redline);border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:.8rem;color:var(--redline)}
-.notes strong{display:block;font-size:1.35rem;text-transform:uppercase;line-height:1.05;margin-bottom:4px}
-.notes span{color:var(--pencil)}
-@media (max-width:900px){.think{grid-template-columns:1fr}}
+/* writing */
+.write{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.book{display:grid;grid-template-columns:130px minmax(0,1fr);gap:22px}
+.cover{width:130px;aspect-ratio:2/3;border:2px solid var(--vellum);background:var(--deep);padding:14px 12px;display:flex;flex-direction:column;justify-content:space-between}
+.cover span{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:.95;text-transform:uppercase}
+.cover small{font-family:var(--mono);font-size:.56rem;color:var(--redline)}
+.book h3{font-size:1.8rem;text-transform:uppercase;margin-bottom:8px}
+.book p{color:var(--soft)}
+.book a{display:inline-block;margin-top:12px;font-weight:600}
+.talk{display:grid;gap:6px;border-left:3px solid var(--redline);padding-left:18px}
+.talk h3{font-size:1.6rem;text-transform:uppercase}
+.talk p{color:var(--soft)}
+.tools{width:100%;border-collapse:collapse;margin-top:40px;font-size:.97rem}
+.tools th,.tools td{border:1px solid var(--rule);padding:10px 14px;text-align:left;vertical-align:top}
+.tools th{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pencil);font-weight:400;white-space:nowrap;width:1%}
+.tools-wrap{overflow-x:auto}
+@media (max-width:820px){.write{grid-template-columns:1fr}}
 @media (max-width:460px){.book{grid-template-columns:1fr}}
 
-/* toolbox */
-.bom{width:100%;border-collapse:collapse;margin-top:28px;font-size:1rem}
-.bom th,.bom td{border:1px solid var(--rule);padding:10px 14px;text-align:left;vertical-align:top}
-.bom th{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pencil);font-weight:400;white-space:nowrap}
-.bom td:first-child{font-family:var(--mono);font-size:.72rem;color:var(--pencil);white-space:nowrap}
-.bom-wrap{overflow-x:auto}
-
 /* contact */
-.contact{background:var(--vellum);color:var(--deep);padding-block:clamp(44px,7vw,80px)}
-.contact h2{font-size:clamp(2.6rem,7vw,5.4rem);max-width:13ch}
-.contact .an{color:#4b6588}
-.crow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-top:26px}
-.crow p{max-width:36em;font-size:1.15rem}
+.contact{background:var(--vellum);color:var(--deep);padding-block:clamp(44px,7vw,72px)}
+.contact h2{font-size:clamp(2.4rem,6vw,4.4rem);text-transform:uppercase}
+.contact .lab{color:#4b6588}
+.crow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-top:22px}
+.crow p{max-width:36em;font-size:1.1rem}
+.crow p+p{margin-top:10px}
 .mailbox{display:grid;gap:10px;justify-items:start;min-width:0}
-.mailbox code{font-family:var(--mono);font-size:clamp(.9rem,2vw,1.1rem);border:1px solid var(--deep);padding:10px 12px;word-break:break-all;user-select:all}
+.mailbox code{font-family:var(--mono);font-size:clamp(.95rem,2vw,1.1rem);border:1px solid var(--deep);padding:10px 12px;word-break:break-all;user-select:all}
 .contact .btn{background:var(--deep);color:var(--vellum);border-color:var(--deep)}
-.links{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
-.copied{font-family:var(--mono);font-size:.74rem}
+.contact .btn:hover{background:var(--redline);border-color:var(--redline);color:var(--deep)}
+.contact a:hover{color:#b83a2c}
+.links{display:flex;gap:24px;flex-wrap:wrap;margin-top:26px;font-weight:600}
+.copied{font-family:var(--mono);font-size:.78rem}
 @media (max-width:760px){.crow{grid-template-columns:1fr}}
 
 /* title block */
-.tb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,2fr);border-top:2px solid var(--vellum);background:var(--deep);font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--pencil)}
-.tb div{padding:10px 14px;border-left:1px solid var(--rule);display:grid;gap:3px;min-width:0}
+.tb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--vellum);background:var(--deep)}
+.tb div{padding:10px 16px;border-left:1px solid var(--rule);display:grid;gap:2px;min-width:0}
 .tb div:first-child{border-left:none}
-.tb b{font-family:var(--display);font-size:1rem;letter-spacing:.02em;color:var(--vellum);font-weight:600}
-.tb .credit{text-transform:none;letter-spacing:0;font-size:.66rem;line-height:1.45}
-.tb .credit a{color:var(--pencil)}
-@media (max-width:900px){.tb{grid-template-columns:1fr 1fr}.tb div:nth-child(odd){border-left:none}.tb div:nth-child(n+3){border-top:1px solid var(--rule)}.tb .credit{grid-column:1/-1;border-left:none}}
+.tb b{font-family:var(--display);font-size:1rem;font-weight:600}
+@media (max-width:760px){.tb{grid-template-columns:1fr 1fr}.tb div:nth-child(3){border-left:none}.tb div:nth-child(n+3){border-top:1px solid var(--rule)}}
 </style>
-
+<!--
+Drawings on this page were made from photos:
+F/A-18F Super Hornet: U.S. Navy photo by MC3 Bryan Blair (public domain), https://commons.wikimedia.org/wiki/File:US_Navy_100527-N-3620B-012_An_F-A-18F_Super_Hornet_assigned_to_the_Fighting_Checkmates_of_Strike_Fighter_Squadron_(VFA)_211_flies_over_the_aircraft_carrier_USS_Enterprise_(CVN_65).jpg
+Boeing 777F: photo by Fabian Roudra Baroi, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Turkish_Cargo_Boeing_777F_(Aircraft-TC-LJR)11.jpg (tracing shared under CC BY-SA 4.0)
+Row houses: photo by Bmzuckerman, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Federal_-_Philadelphia,_PA_-_Society_Hill_Row_Houses_(1).jpg (redrawn as an elevation)
+-->
+</head>
+<body>
 <div class="frame">
-  <header class="nav pad">
+  <header class="top pad">
     <a class="brand" href="#top" id="top">Mikael Yemane</a>
-    <nav aria-label="Sheets">
-      <a href="#work">Sht 1 · Work</a>
-      <a href="#services">Sht 2 · Services</a>
-      <a href="#build">Sht 3 · Build</a>
-      <a href="#scorecard">Sht 4 · Scorecard</a>
-      <a href="#thinking">Sht 5 · Thinking</a>
-      <a class="c" href="#contact">Contact ►</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contract">Contract work</a>
+      <a class="c" href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero pad" aria-label="Introduction">
     <div>
-      <span class="an">Spec · ML platform &amp; AI leadership · Salt Lake City / remote US</span>
-      <h1>ML platforms for systems where failure is <u>expensive.</u></h1>
-      <p class="sub">I build and lead the MLOps platforms behind aviation, defense, grid and federal ML. Seven years in production. I also lead construction projects on my own real estate portfolio. Active DoD Secret clearance.</p>
+      <span class="lab">Principal ML Platform Lead · Salt Lake City / remote US</span>
+      <h1>ML platforms where failure is <span>expensive</span></h1>
+      <p class="sub">I build and lead the MLOps platforms behind predictive maintenance for commercial aviation and the U.S. Navy. Seven years of production ML across aviation, defense, energy, federal services and enterprise software. Active DoD Secret clearance.</p>
+      <div class="seeking">
+        <span class="lab">Open to</span>
+        <b>Head of ML Platform · Director of MLOps · Principal or Staff ML Platform Lead</b>
+        <span style="color:var(--soft);font-size:.95rem">Remote US or Salt Lake City. Contract and advisory work too.</span>
+      </div>
       <div class="btns">
-        <a class="btn" href="#contact">Start a conversation</a>
-        <a class="btn o" href="#scorecard">MLOps scorecard</a>
+        <a class="btn" href="mailto:yemanemikaela@gmail.com">Email me</a>
+        <a class="btn o" href="mailto:yemanemikaela@gmail.com?subject=Resume%20request">Request my resume</a>
       </div>
     </div>
-    <figure class="dwg" style="margin:0">
-      <span class="an dlab">General arrangement · Civil &amp; naval · Plan</span>
-      <div class="form-air"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1321 1266" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="Boeing 777 traced from photo, plan view"><path class="ol" d="M705,12 L694,14 L704,47 L699,156 L694,161 L690,200 L687,203 L671,204 L687,218 L680,292 L661,296 L678,308 L673,350 L676,364 L670,377 L636,378 L651,395 L608,482 L603,482 L595,488 L562,492 L522,503 L473,504 L406,501 L340,512 L297,524 L278,522 L269,527 L255,528 L244,511 L199,388 L166,387 L156,389 L154,395 L147,553 L85,573 L85,576 L92,580 L93,585 L115,584 L120,589 L134,595 L135,598 L12,794 L13,798 L52,799 L60,794 L186,666 L191,671 L199,708 L203,715 L243,718 L251,713 L254,705 L278,678 L286,663 L303,641 L312,634 L333,634 L352,639 L375,641 L534,644 L557,647 L543,706 L524,714 L535,721 L539,729 L549,732 L534,777 L527,782 L501,833 L496,837 L476,841 L488,847 L491,853 L439,953 L433,957 L414,961 L418,965 L427,967 L429,971 L396,1035 L397,1046 L351,1124 L313,1196 L274,1246 L273,1253 L281,1252 L325,1231 L338,1218 L374,1169 L445,1084 L453,1071 L463,1062 L479,1039 L506,1010 L522,987 L558,948 L562,940 L597,902 L600,895 L611,886 L615,878 L650,841 L655,832 L689,797 L690,792 L706,778 L717,777 L728,782 L755,786 L792,786 L821,779 L831,771 L839,748 L838,724 L831,706 L818,695 L789,688 L799,672 L807,667 L807,661 L816,656 L818,649 L841,649 L850,646 L856,650 L861,648 L867,650 L873,646 L892,649 L937,647 L942,651 L1000,650 L1003,648 L1014,651 L1027,649 L1056,652 L1070,650 L1081,652 L1085,649 L1107,653 L1115,649 L1123,652 L1148,651 L1206,640 L1250,626 L1292,598 L1307,582 L1307,572 L1298,561 L1253,535 L1240,535 L1201,520 L1179,515 L1108,509 L929,508 L886,501 L882,495 L883,485 L854,399 L856,396 L874,396 L880,401 L882,408 L898,408 L906,404 L935,402 L951,396 L957,390 L966,369 L966,345 L962,331 L950,316 L922,308 L908,307 L903,311 L883,308 L851,311 L839,318 L827,316 L741,26 L730,24Z" stroke-width="2" vector-effect="non-scaling-stroke"/><path class="dt" d="M530,854 L467,954 L467,950 L487,919 L491,909 L513,876 L519,863 L513,875 L491,908 L489,915 L467,949 L466,954 L470,952 L530,855 M694,781 L653,826 L636,848 L594,895 L517,987 L693,782 M808,700 L799,710 L798,707 L799,706 L796,712 L798,709 L799,712 L797,715 L794,732 L796,740 L795,746 L799,761 L804,769 L810,774 L819,775 L813,775 L804,768 L798,758 L795,746 L796,741 L799,739 L798,736 L797,737 L799,738 L797,740 L795,738 L794,732 L797,715 L802,706 L808,700 L821,705 L831,715 L822,705 L809,700 M777,687 L774,689 L770,688 L740,691 L702,699 L697,703 L689,717 L697,704 L705,698 L740,691 L782,688 L778,688 M200,651 L189,663 L201,651 L220,664 L240,673 L260,678 L272,678 L260,678 L240,673 L221,664 L201,651 M619,614 L605,710 L603,714 L595,713 L594,710 L603,663 L604,648 L608,635 L609,616 L608,635 L604,648 L601,675 L595,709 L593,712 L598,714 L604,714 L619,615 M219,603 L227,609 L246,617 L247,619 L232,619 L222,623 L186,663 L225,622 L235,622 L285,630 L301,637 L291,631 L228,621 L232,619 L247,620 L247,618 L228,609 L220,603 M246,528 L182,542 L150,551 L203,537 L249,528 L247,528 M709,407 L666,482 L659,483 L658,481 L664,472 L667,462 L676,450 L697,410 L676,449 L667,461 L666,467 L658,482 L653,483 L666,483 L709,408 M843,396 L844,405 L852,410 L849,416 L854,424 L858,439 L853,421 L849,415 L851,411 L855,418 L862,444 L858,450 L862,458 L858,449 L861,445 L864,449 L868,462 L867,465 L870,470 L866,472 L865,475 L868,480 L865,475 L869,471 L873,482 L879,487 L875,495 L870,491 L871,494 L876,495 L879,487 L875,483 L877,482 L875,483 L873,481 L862,441 L860,439 L859,431 L851,409 L851,400 L850,404 L852,408 L850,409 L844,404 L843,397 M935,320 L928,327 L923,339 L922,357 L924,359 L922,360 L922,368 L927,383 L932,390 L942,394 L948,392 L955,384 L947,392 L942,394 L937,393 L928,384 L922,368 L922,361 L924,360 L924,357 L922,356 L922,343 L925,333 L935,320 L944,323 L936,320 M926,315 L917,328 L913,342 L895,341 L895,345 L912,348 L913,369 L916,380 L924,394 L932,399 L929,398 L920,388 L914,373 L912,360 L914,337 L919,325 L927,315 M716,224 L715,295 L712,293 L713,250 L711,225 L713,250 L713,295 L716,295 L716,225 M735,36 L735,43 L741,59 L740,63 L743,66 L748,83 L747,87 L751,92 L755,112 L758,116 L762,129 L762,136 L765,139 L769,152 L769,160 L773,166 L778,189 L780,190 L785,205 L785,213 L788,216 L792,227 L794,242 L798,247 L803,264 L802,267 L805,270 L811,292 L805,270 L802,266 L803,264 L799,250 L794,241 L792,227 L788,215 L785,212 L785,205 L780,189 L778,188 L772,162 L769,159 L769,152 L765,138 L762,135 L762,129 L758,115 L755,111 L750,88 L747,86 L748,83 L743,65 L740,62 L742,59 L739,55 L735,37 M734,32 L734,34 L737,32 L740,38 L772,154 L792,217 L796,235 L799,240 L804,262 L806,264 L822,315 L823,322 L821,323 L812,294 L812,298 L815,302 L820,322 L822,324 L820,327 L823,323 L822,315 L780,181 L751,81 L752,80 L746,64 L738,32 L735,32" stroke-width="1" opacity=".7" vector-effect="non-scaling-stroke"/></svg></div>
-      <div class="form-f18"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 1552 1091" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="F/A-18F Super Hornet traced from a U.S. Navy photo, plan view"><path d="M-20,546 H1532" stroke-width="1" stroke-dasharray="14 4 2 4" opacity=".45" vector-effect="non-scaling-stroke"/><path d="M10,287 L13,296 L106,460 L111,466 L128,468 L125,472 L86,487 L85,524 L88,528 L138,543 L138,547 L135,549 L88,562 L85,566 L86,603 L125,618 L128,622 L111,624 L106,630 L10,800 L12,808 L32,842 L116,842 L253,714 L260,710 L270,699 L279,695 L287,683 L319,654 L340,648 L365,647 L369,649 L387,649 L428,645 L429,647 L411,656 L408,660 L414,902 L419,906 L415,913 L419,1051 L421,1066 L423,1068 L432,1068 L440,1077 L448,1080 L626,1080 L654,1078 L653,1073 L644,1069 L590,1068 L582,1065 L579,1062 L579,1057 L651,929 L651,925 L639,923 L637,920 L641,915 L657,909 L657,904 L652,901 L651,897 L678,846 L689,837 L696,839 L735,837 L733,831 L696,825 L694,819 L745,725 L762,698 L849,691 L898,682 L947,669 L1032,639 L1148,586 L1156,584 L1217,583 L1219,581 L1301,581 L1304,578 L1390,577 L1466,562 L1489,555 L1501,548 L1500,540 L1489,535 L1442,522 L1419,520 L1399,514 L1304,512 L1301,509 L1219,509 L1217,507 L1156,506 L1148,504 L1032,451 L947,421 L898,408 L849,399 L762,392 L745,365 L694,271 L696,265 L733,259 L735,253 L712,251 L689,253 L678,244 L652,196 L651,191 L657,186 L657,181 L641,175 L637,170 L639,167 L651,165 L651,161 L579,33 L579,28 L590,22 L644,21 L654,16 L654,12 L448,10 L440,13 L432,22 L423,22 L421,24 L415,143 L415,177 L419,184 L414,188 L408,430 L411,434 L429,443 L428,445 L387,441 L369,441 L365,443 L340,442 L319,436 L287,407 L279,395 L270,391 L260,380 L253,376 L116,248 L32,248Z" stroke-width="2" vector-effect="non-scaling-stroke"/><path d="M742,462 L763,498 M742,629 L763,593 M766,497 L745,461 M766,594 L745,630 M742,441 L711,435 M742,650 L711,656 M133,472 L166,465 M133,619 L166,626 M326,447 L299,449 M326,644 L299,642 M1116,501 L1089,502 M1116,590 L1089,589 M464,441 L432,437 M464,650 L432,654 M653,504 L591,519 M653,587 L591,572 M269,454 L331,450 M269,637 L331,641 M487,253 L522,250 M487,838 L522,841 M484,217 L487,246 M484,874 L487,845 M468,185 L424,180 M468,906 L424,911 M1089,500 L1052,502 M1089,591 L1052,589 M463,68 L471,120 M463,1023 L471,971 M1058,504 L1092,504 M1058,587 L1092,587 M472,184 L468,142 M472,907 L468,949 M492,286 L512,411 M492,805 L512,680 M297,449 L269,451 M297,642 L269,640 M178,539 L207,543 M178,552 L207,548 M1102,538 L1128,538 M1102,553 L1128,553 M550,442 L519,444 M550,649 L519,647 M681,437 L723,442 M681,654 L723,649 M521,440 L486,441 M521,651 L486,650 M465,144 L470,186 M465,947 L470,905 M472,113 L467,69 M472,978 L467,1022 M474,141 L478,173 M474,950 L478,918 M481,173 L477,143 M481,918 L477,948 M523,247 L492,250 M523,844 L492,841 M483,279 L493,354 M483,812 L493,737 M503,412 L486,278 M503,679 L486,813 M504,349 L496,285 M504,742 L496,806 M493,355 L498,398 M493,736 L498,693 M728,431 L701,431 M728,660 L701,660 M787,432 L749,430 M787,659 L749,661 M751,433 L787,435 M751,658 L787,656 M697,436 L663,434 M697,655 L663,657 M158,460 L132,466 M158,631 L132,625 M1049,500 L912,495 M1049,591 L912,596 M912,498 L1051,503 M912,593 L1051,588 M848,498 L797,500 M848,593 L797,591 M511,388 L506,349 M511,703 L506,742 M606,518 L673,504 M606,573 L673,587 M797,503 L847,501 M797,588 L847,590 M753,516 L783,516 M753,575 L783,575 M498,446 L542,446 M498,645 L542,645" stroke-width="1" opacity=".7" vector-effect="non-scaling-stroke"/></svg></div>
-      <span class="cl" style="top:18%;right:0"><i></i>−58% compute</span>
-      <span class="cl" style="top:27%;right:0"><i></i>3× pipelines</span>
-      <span class="dim"><b>Civil fleet · Naval aviation</b></span>
-    </figure>
+    <div class="hero-art">
+      <div class="a"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1321 1266" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="Boeing 777 traced from photo, plan view"><path class="ol" d="M705,12 L694,14 L704,47 L699,156 L694,161 L690,200 L687,203 L671,204 L687,218 L680,292 L661,296 L678,308 L673,350 L676,364 L670,377 L636,378 L651,395 L608,482 L603,482 L595,488 L562,492 L522,503 L473,504 L406,501 L340,512 L297,524 L278,522 L269,527 L255,528 L244,511 L199,388 L166,387 L156,389 L154,395 L147,553 L85,573 L85,576 L92,580 L93,585 L115,584 L120,589 L134,595 L135,598 L12,794 L13,798 L52,799 L60,794 L186,666 L191,671 L199,708 L203,715 L243,718 L251,713 L254,705 L278,678 L286,663 L303,641 L312,634 L333,634 L352,639 L375,641 L534,644 L557,647 L543,706 L524,714 L535,721 L539,729 L549,732 L534,777 L527,782 L501,833 L496,837 L476,841 L488,847 L491,853 L439,953 L433,957 L414,961 L418,965 L427,967 L429,971 L396,1035 L397,1046 L351,1124 L313,1196 L274,1246 L273,1253 L281,1252 L325,1231 L338,1218 L374,1169 L445,1084 L453,1071 L463,1062 L479,1039 L506,1010 L522,987 L558,948 L562,940 L597,902 L600,895 L611,886 L615,878 L650,841 L655,832 L689,797 L690,792 L706,778 L717,777 L728,782 L755,786 L792,786 L821,779 L831,771 L839,748 L838,724 L831,706 L818,695 L789,688 L799,672 L807,667 L807,661 L816,656 L818,649 L841,649 L850,646 L856,650 L861,648 L867,650 L873,646 L892,649 L937,647 L942,651 L1000,650 L1003,648 L1014,651 L1027,649 L1056,652 L1070,650 L1081,652 L1085,649 L1107,653 L1115,649 L1123,652 L1148,651 L1206,640 L1250,626 L1292,598 L1307,582 L1307,572 L1298,561 L1253,535 L1240,535 L1201,520 L1179,515 L1108,509 L929,508 L886,501 L882,495 L883,485 L854,399 L856,396 L874,396 L880,401 L882,408 L898,408 L906,404 L935,402 L951,396 L957,390 L966,369 L966,345 L962,331 L950,316 L922,308 L908,307 L903,311 L883,308 L851,311 L839,318 L827,316 L741,26 L730,24Z" stroke-width="2" vector-effect="non-scaling-stroke"/><path class="dt" d="M530,854 L467,954 L467,950 L487,919 L491,909 L513,876 L519,863 L513,875 L491,908 L489,915 L467,949 L466,954 L470,952 L530,855 M694,781 L653,826 L636,848 L594,895 L517,987 L693,782 M808,700 L799,710 L798,707 L799,706 L796,712 L798,709 L799,712 L797,715 L794,732 L796,740 L795,746 L799,761 L804,769 L810,774 L819,775 L813,775 L804,768 L798,758 L795,746 L796,741 L799,739 L798,736 L797,737 L799,738 L797,740 L795,738 L794,732 L797,715 L802,706 L808,700 L821,705 L831,715 L822,705 L809,700 M777,687 L774,689 L770,688 L740,691 L702,699 L697,703 L689,717 L697,704 L705,698 L740,691 L782,688 L778,688 M200,651 L189,663 L201,651 L220,664 L240,673 L260,678 L272,678 L260,678 L240,673 L221,664 L201,651 M619,614 L605,710 L603,714 L595,713 L594,710 L603,663 L604,648 L608,635 L609,616 L608,635 L604,648 L601,675 L595,709 L593,712 L598,714 L604,714 L619,615 M219,603 L227,609 L246,617 L247,619 L232,619 L222,623 L186,663 L225,622 L235,622 L285,630 L301,637 L291,631 L228,621 L232,619 L247,620 L247,618 L228,609 L220,603 M246,528 L182,542 L150,551 L203,537 L249,528 L247,528 M709,407 L666,482 L659,483 L658,481 L664,472 L667,462 L676,450 L697,410 L676,449 L667,461 L666,467 L658,482 L653,483 L666,483 L709,408 M843,396 L844,405 L852,410 L849,416 L854,424 L858,439 L853,421 L849,415 L851,411 L855,418 L862,444 L858,450 L862,458 L858,449 L861,445 L864,449 L868,462 L867,465 L870,470 L866,472 L865,475 L868,480 L865,475 L869,471 L873,482 L879,487 L875,495 L870,491 L871,494 L876,495 L879,487 L875,483 L877,482 L875,483 L873,481 L862,441 L860,439 L859,431 L851,409 L851,400 L850,404 L852,408 L850,409 L844,404 L843,397 M935,320 L928,327 L923,339 L922,357 L924,359 L922,360 L922,368 L927,383 L932,390 L942,394 L948,392 L955,384 L947,392 L942,394 L937,393 L928,384 L922,368 L922,361 L924,360 L924,357 L922,356 L922,343 L925,333 L935,320 L944,323 L936,320 M926,315 L917,328 L913,342 L895,341 L895,345 L912,348 L913,369 L916,380 L924,394 L932,399 L929,398 L920,388 L914,373 L912,360 L914,337 L919,325 L927,315 M716,224 L715,295 L712,293 L713,250 L711,225 L713,250 L713,295 L716,295 L716,225 M735,36 L735,43 L741,59 L740,63 L743,66 L748,83 L747,87 L751,92 L755,112 L758,116 L762,129 L762,136 L765,139 L769,152 L769,160 L773,166 L778,189 L780,190 L785,205 L785,213 L788,216 L792,227 L794,242 L798,247 L803,264 L802,267 L805,270 L811,292 L805,270 L802,266 L803,264 L799,250 L794,241 L792,227 L788,215 L785,212 L785,205 L780,189 L778,188 L772,162 L769,159 L769,152 L765,138 L762,135 L762,129 L758,115 L755,111 L750,88 L747,86 L748,83 L743,65 L740,62 L742,59 L739,55 L735,37 M734,32 L734,34 L737,32 L740,38 L772,154 L792,217 L796,235 L799,240 L804,262 L806,264 L822,315 L823,322 L821,323 L812,294 L812,298 L815,302 L820,322 L822,324 L820,327 L823,323 L822,315 L780,181 L751,81 L752,80 L746,64 L738,32 L735,32" stroke-width="1" opacity=".7" vector-effect="non-scaling-stroke"/></svg></div>
+      <div class="f"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 1552 1091" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="F/A-18F Super Hornet traced from a U.S. Navy photo, plan view"><path d="M-20,546 H1532" stroke-width="1" stroke-dasharray="14 4 2 4" opacity=".45" vector-effect="non-scaling-stroke"/><path d="M10,287 L13,296 L106,460 L111,466 L128,468 L125,472 L86,487 L85,524 L88,528 L138,543 L138,547 L135,549 L88,562 L85,566 L86,603 L125,618 L128,622 L111,624 L106,630 L10,800 L12,808 L32,842 L116,842 L253,714 L260,710 L270,699 L279,695 L287,683 L319,654 L340,648 L365,647 L369,649 L387,649 L428,645 L429,647 L411,656 L408,660 L414,902 L419,906 L415,913 L419,1051 L421,1066 L423,1068 L432,1068 L440,1077 L448,1080 L626,1080 L654,1078 L653,1073 L644,1069 L590,1068 L582,1065 L579,1062 L579,1057 L651,929 L651,925 L639,923 L637,920 L641,915 L657,909 L657,904 L652,901 L651,897 L678,846 L689,837 L696,839 L735,837 L733,831 L696,825 L694,819 L745,725 L762,698 L849,691 L898,682 L947,669 L1032,639 L1148,586 L1156,584 L1217,583 L1219,581 L1301,581 L1304,578 L1390,577 L1466,562 L1489,555 L1501,548 L1500,540 L1489,535 L1442,522 L1419,520 L1399,514 L1304,512 L1301,509 L1219,509 L1217,507 L1156,506 L1148,504 L1032,451 L947,421 L898,408 L849,399 L762,392 L745,365 L694,271 L696,265 L733,259 L735,253 L712,251 L689,253 L678,244 L652,196 L651,191 L657,186 L657,181 L641,175 L637,170 L639,167 L651,165 L651,161 L579,33 L579,28 L590,22 L644,21 L654,16 L654,12 L448,10 L440,13 L432,22 L423,22 L421,24 L415,143 L415,177 L419,184 L414,188 L408,430 L411,434 L429,443 L428,445 L387,441 L369,441 L365,443 L340,442 L319,436 L287,407 L279,395 L270,391 L260,380 L253,376 L116,248 L32,248Z" stroke-width="2" vector-effect="non-scaling-stroke"/><path d="M742,462 L763,498 M742,629 L763,593 M766,497 L745,461 M766,594 L745,630 M742,441 L711,435 M742,650 L711,656 M133,472 L166,465 M133,619 L166,626 M326,447 L299,449 M326,644 L299,642 M1116,501 L1089,502 M1116,590 L1089,589 M464,441 L432,437 M464,650 L432,654 M653,504 L591,519 M653,587 L591,572 M269,454 L331,450 M269,637 L331,641 M487,253 L522,250 M487,838 L522,841 M484,217 L487,246 M484,874 L487,845 M468,185 L424,180 M468,906 L424,911 M1089,500 L1052,502 M1089,591 L1052,589 M463,68 L471,120 M463,1023 L471,971 M1058,504 L1092,504 M1058,587 L1092,587 M472,184 L468,142 M472,907 L468,949 M492,286 L512,411 M492,805 L512,680 M297,449 L269,451 M297,642 L269,640 M178,539 L207,543 M178,552 L207,548 M1102,538 L1128,538 M1102,553 L1128,553 M550,442 L519,444 M550,649 L519,647 M681,437 L723,442 M681,654 L723,649 M521,440 L486,441 M521,651 L486,650 M465,144 L470,186 M465,947 L470,905 M472,113 L467,69 M472,978 L467,1022 M474,141 L478,173 M474,950 L478,918 M481,173 L477,143 M481,918 L477,948 M523,247 L492,250 M523,844 L492,841 M483,279 L493,354 M483,812 L493,737 M503,412 L486,278 M503,679 L486,813 M504,349 L496,285 M504,742 L496,806 M493,355 L498,398 M493,736 L498,693 M728,431 L701,431 M728,660 L701,660 M787,432 L749,430 M787,659 L749,661 M751,433 L787,435 M751,658 L787,656 M697,436 L663,434 M697,655 L663,657 M158,460 L132,466 M158,631 L132,625 M1049,500 L912,495 M1049,591 L912,596 M912,498 L1051,503 M912,593 L1051,588 M848,498 L797,500 M848,593 L797,591 M511,388 L506,349 M511,703 L506,742 M606,518 L673,504 M606,573 L673,587 M797,503 L847,501 M797,588 L847,590 M753,516 L783,516 M753,575 L783,575 M498,446 L542,446 M498,645 L542,645" stroke-width="1" opacity=".7" vector-effect="non-scaling-stroke"/></svg></div>
+    </div>
   </section>
 
   <div class="proof" role="list">
-    <div role="listitem"><b class="num red">−58%</b><span>compute · $500K+/yr</span></div>
-    <div role="listitem"><b class="num">3×</b><span>pipeline speed</span></div>
-    <div role="listitem"><b class="num">$10M+</b><span>contract won</span></div>
-    <div role="listitem"><b class="num">$1.25M</b><span>real estate portfolio</span></div>
+    <div role="listitem"><b class="num red">−58%</b><span>compute cost on the fleet platform, over $500K saved a year</span></div>
+    <div role="listitem"><b class="num">~10</b><span>engineers led across ML, MLOps, DevOps and data engineering</span></div>
+    <div role="listitem"><b class="num">$10M+</b><span>Navy contract won on a prototype I built</span></div>
+    <div role="listitem"><b class="num">7 yrs</b><span>production ML in five industries</span></div>
   </div>
 
-  <section class="sheet pad" id="work">
-    <div class="shead"><h2>Drawn from the flight line</h2><span class="sn">Sht 1 of 5 · Selected work</span></div>
-    <p class="intro">Rare-event prediction on high-volume sensor telemetry, where false negatives are expensive and every prediction must be auditable. From Navy strike fighters to airline fleets.</p>
+  <section class="sec pad" id="work">
+    <div class="head">
+      <h2>Selected work</h2>
+      <p>Most of my work is rare-event prediction on high-volume sensor telemetry, where false negatives are expensive and every prediction has to be auditable.</p>
+    </div>
 
-    <article class="detail">
+    <article class="job">
       <div>
-        <span class="an">Detail A · Commercial aviation · Current</span>
-        <h3>Fleet predictive maintenance</h3>
-        <p class="t">Principal ML Engineer · MLOps technical lead</p>
-        <p class="d">I've led a team of about ten across ML, MLOps, DevOps and data engineering on a predictive-maintenance platform for airline fleets. We parallelized ML workflows, re-architected the data pipelines, built the automated maintenance-alert backend, and moved our side of the platform from Azure to AWS Databricks with Unity Catalog governance.</p>
-        <div class="res"><span><b class="num">$500K+</b>saved a year</span><span><b class="num">−58%</b>compute cost</span><span><b class="num">3×</b>faster pipelines</span><span><b>Azure→AWS</b>Databricks migration</span></div>
+        <span class="lab">Commercial aviation · current</span>
+        <h3>Fleet predictive maintenance platform</h3>
+        <p class="role">Principal ML Platform Lead</p>
+        <p class="d">I lead the MLOps platform behind predictive maintenance for airline fleets, with a team that spans ML, MLOps, DevOps and data engineering. We parallelized the training workflows, rebuilt the data pipelines, built the automated maintenance-alert backend, and moved our side of the platform from Azure to AWS Databricks under Unity Catalog governance.</p>
+        <div class="res">
+          <div><b class="num">$500K+</b><span>saved a year</span></div>
+          <div><b class="num">−58%</b><span>compute cost</span></div>
+          <div><b class="num">3×</b><span>faster pipelines</span></div>
+        </div>
       </div>
-      <figure class="dwg" style="margin:0">
-        <span class="an dlab">Detail A · Scale NTS</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1321 1266" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="Boeing 777 traced from photo, plan view"><path class="ol" d="M705,12 L694,14 L704,47 L699,156 L694,161 L690,200 L687,203 L671,204 L687,218 L680,292 L661,296 L678,308 L673,350 L676,364 L670,377 L636,378 L651,395 L608,482 L603,482 L595,488 L562,492 L522,503 L473,504 L406,501 L340,512 L297,524 L278,522 L269,527 L255,528 L244,511 L199,388 L166,387 L156,389 L154,395 L147,553 L85,573 L85,576 L92,580 L93,585 L115,584 L120,589 L134,595 L135,598 L12,794 L13,798 L52,799 L60,794 L186,666 L191,671 L199,708 L203,715 L243,718 L251,713 L254,705 L278,678 L286,663 L303,641 L312,634 L333,634 L352,639 L375,641 L534,644 L557,647 L543,706 L524,714 L535,721 L539,729 L549,732 L534,777 L527,782 L501,833 L496,837 L476,841 L488,847 L491,853 L439,953 L433,957 L414,961 L418,965 L427,967 L429,971 L396,1035 L397,1046 L351,1124 L313,1196 L274,1246 L273,1253 L281,1252 L325,1231 L338,1218 L374,1169 L445,1084 L453,1071 L463,1062 L479,1039 L506,1010 L522,987 L558,948 L562,940 L597,902 L600,895 L611,886 L615,878 L650,841 L655,832 L689,797 L690,792 L706,778 L717,777 L728,782 L755,786 L792,786 L821,779 L831,771 L839,748 L838,724 L831,706 L818,695 L789,688 L799,672 L807,667 L807,661 L816,656 L818,649 L841,649 L850,646 L856,650 L861,648 L867,650 L873,646 L892,649 L937,647 L942,651 L1000,650 L1003,648 L1014,651 L1027,649 L1056,652 L1070,650 L1081,652 L1085,649 L1107,653 L1115,649 L1123,652 L1148,651 L1206,640 L1250,626 L1292,598 L1307,582 L1307,572 L1298,561 L1253,535 L1240,535 L1201,520 L1179,515 L1108,509 L929,508 L886,501 L882,495 L883,485 L854,399 L856,396 L874,396 L880,401 L882,408 L898,408 L906,404 L935,402 L951,396 L957,390 L966,369 L966,345 L962,331 L950,316 L922,308 L908,307 L903,311 L883,308 L851,311 L839,318 L827,316 L741,26 L730,24Z" stroke-width="2" vector-effect="non-scaling-stroke"/><path class="dt" d="M530,854 L467,954 L467,950 L487,919 L491,909 L513,876 L519,863 L513,875 L491,908 L489,915 L467,949 L466,954 L470,952 L530,855 M694,781 L653,826 L636,848 L594,895 L517,987 L693,782 M808,700 L799,710 L798,707 L799,706 L796,712 L798,709 L799,712 L797,715 L794,732 L796,740 L795,746 L799,761 L804,769 L810,774 L819,775 L813,775 L804,768 L798,758 L795,746 L796,741 L799,739 L798,736 L797,737 L799,738 L797,740 L795,738 L794,732 L797,715 L802,706 L808,700 L821,705 L831,715 L822,705 L809,700 M777,687 L774,689 L770,688 L740,691 L702,699 L697,703 L689,717 L697,704 L705,698 L740,691 L782,688 L778,688 M200,651 L189,663 L201,651 L220,664 L240,673 L260,678 L272,678 L260,678 L240,673 L221,664 L201,651 M619,614 L605,710 L603,714 L595,713 L594,710 L603,663 L604,648 L608,635 L609,616 L608,635 L604,648 L601,675 L595,709 L593,712 L598,714 L604,714 L619,615 M219,603 L227,609 L246,617 L247,619 L232,619 L222,623 L186,663 L225,622 L235,622 L285,630 L301,637 L291,631 L228,621 L232,619 L247,620 L247,618 L228,609 L220,603 M246,528 L182,542 L150,551 L203,537 L249,528 L247,528 M709,407 L666,482 L659,483 L658,481 L664,472 L667,462 L676,450 L697,410 L676,449 L667,461 L666,467 L658,482 L653,483 L666,483 L709,408 M843,396 L844,405 L852,410 L849,416 L854,424 L858,439 L853,421 L849,415 L851,411 L855,418 L862,444 L858,450 L862,458 L858,449 L861,445 L864,449 L868,462 L867,465 L870,470 L866,472 L865,475 L868,480 L865,475 L869,471 L873,482 L879,487 L875,495 L870,491 L871,494 L876,495 L879,487 L875,483 L877,482 L875,483 L873,481 L862,441 L860,439 L859,431 L851,409 L851,400 L850,404 L852,408 L850,409 L844,404 L843,397 M935,320 L928,327 L923,339 L922,357 L924,359 L922,360 L922,368 L927,383 L932,390 L942,394 L948,392 L955,384 L947,392 L942,394 L937,393 L928,384 L922,368 L922,361 L924,360 L924,357 L922,356 L922,343 L925,333 L935,320 L944,323 L936,320 M926,315 L917,328 L913,342 L895,341 L895,345 L912,348 L913,369 L916,380 L924,394 L932,399 L929,398 L920,388 L914,373 L912,360 L914,337 L919,325 L927,315 M716,224 L715,295 L712,293 L713,250 L711,225 L713,250 L713,295 L716,295 L716,225 M735,36 L735,43 L741,59 L740,63 L743,66 L748,83 L747,87 L751,92 L755,112 L758,116 L762,129 L762,136 L765,139 L769,152 L769,160 L773,166 L778,189 L780,190 L785,205 L785,213 L788,216 L792,227 L794,242 L798,247 L803,264 L802,267 L805,270 L811,292 L805,270 L802,266 L803,264 L799,250 L794,241 L792,227 L788,215 L785,212 L785,205 L780,189 L778,188 L772,162 L769,159 L769,152 L765,138 L762,135 L762,129 L758,115 L755,111 L750,88 L747,86 L748,83 L743,65 L740,62 L742,59 L739,55 L735,37 M734,32 L734,34 L737,32 L740,38 L772,154 L792,217 L796,235 L799,240 L804,262 L806,264 L822,315 L823,322 L821,323 L812,294 L812,298 L815,302 L820,322 L822,324 L820,327 L823,323 L822,315 L780,181 L751,81 L752,80 L746,64 L738,32 L735,32" stroke-width="1" opacity=".7" vector-effect="non-scaling-stroke"/></svg>
-        <span class="dim"><b>Traced from photo · plan view</b></span>
+      <figure>
+        <div class="pw"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 682 394" fill="none" stroke="currentColor" stroke-linejoin="round" role="img" aria-label="Schematic of the fleet predictive-maintenance ML platform: sensor telemetry, ingest and features, governed tables, training, model registry, deployment, maintenance alerts, and monitoring that triggers retraining"><defs><marker id="ah-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="currentColor" stroke="none"/></marker></defs><rect x="16" y="16" width="190" height="80" stroke-width="1.6"/><text x="111.0" y="53.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">SENSOR TELEMETRY</text><text x="111.0" y="72.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">airline fleets</text><rect x="246" y="16" width="190" height="80" stroke-width="1.6"/><text x="341.0" y="45.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">INGEST + FEATURES</text><text x="341.0" y="64.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">Spark · Databricks</text><text x="341.0" y="86" text-anchor="middle" fill="#ff6b5a" stroke="none" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing=".4">3× FASTER PIPELINES</text><rect x="476" y="16" width="190" height="80" stroke-width="1.6"/><text x="571.0" y="45.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">GOVERNED TABLES</text><text x="571.0" y="64.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">Unity Catalog</text><text x="571.0" y="86" text-anchor="middle" fill="#ff6b5a" stroke="none" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing=".4">AZURE → AWS</text><rect x="476" y="152" width="190" height="80" stroke-width="1.6"/><text x="571.0" y="181.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">TRAIN</text><text x="571.0" y="200.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">parallel jobs</text><text x="571.0" y="222" text-anchor="middle" fill="#ff6b5a" stroke="none" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" letter-spacing=".4">−58% COMPUTE</text><rect x="246" y="152" width="190" height="80" stroke-width="1.6"/><text x="341.0" y="189.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">REGISTRY</text><text x="341.0" y="208.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">MLflow</text><rect x="16" y="152" width="190" height="80" stroke-width="1.6"/><text x="111.0" y="189.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">DEPLOY</text><text x="111.0" y="208.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">CI/CD · Terraform</text><rect x="16" y="288" width="190" height="80" stroke-width="1.6"/><text x="111.0" y="325.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">MAINTENANCE ALERTS</text><text x="111.0" y="344.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">alert backend</text><rect x="246" y="288" width="190" height="80" stroke-width="1.6" stroke-dasharray="6 4"/><text x="341.0" y="325.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="15" letter-spacing=".4">MONITOR</text><text x="341.0" y="344.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12">drift · accuracy · cost</text><path d="M206,56.0 H244" stroke-width="1.3" marker-end="url(#ah-w)"/><path d="M436,56.0 H474" stroke-width="1.3" marker-end="url(#ah-w)"/><path d="M571.0,96 V150" stroke-width="1.3" marker-end="url(#ah-w)"/><path d="M476,192.0 H438" stroke-width="1.3" marker-end="url(#ah-w)"/><path d="M246,192.0 H208" stroke-width="1.3" marker-end="url(#ah-w)"/><path d="M111.0,232 V286" stroke-width="1.3" marker-end="url(#ah-w)"/><path d="M206,328.0 H244" stroke-width="1.3" marker-end="url(#ah-w)"/><path d="M436,328.0 H571.0 V234" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#ah-w)"/><text x="563.0" y="264.0" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" text-anchor="end">retrain on drift</text></svg></div><div class="pn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 388 506" fill="none" stroke="currentColor" stroke-linejoin="round" role="img" aria-label="Schematic of the fleet predictive-maintenance ML platform: sensor telemetry, ingest and features, governed tables, training, model registry, deployment, maintenance alerts, and monitoring that triggers retraining"><defs><marker id="ah-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="currentColor" stroke="none"/></marker></defs><rect x="22" y="22" width="160" height="80" stroke-width="1.6"/><text x="102.0" y="59.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">SENSOR TELEMETRY</text><text x="102.0" y="77.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">airline fleets</text><rect x="206" y="22" width="160" height="80" stroke-width="1.6"/><text x="286.0" y="51.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">INGEST + FEATURES</text><text x="286.0" y="69.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">Spark · Databricks</text><text x="286.0" y="92" text-anchor="middle" fill="#ff6b5a" stroke="none" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" letter-spacing=".4">3× FASTER PIPELINES</text><rect x="206" y="146" width="160" height="80" stroke-width="1.6"/><text x="286.0" y="175.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">GOVERNED TABLES</text><text x="286.0" y="193.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">Unity Catalog</text><text x="286.0" y="216" text-anchor="middle" fill="#ff6b5a" stroke="none" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" letter-spacing=".4">AZURE → AWS</text><rect x="22" y="146" width="160" height="80" stroke-width="1.6"/><text x="102.0" y="175.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">TRAIN</text><text x="102.0" y="193.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">parallel jobs</text><text x="102.0" y="216" text-anchor="middle" fill="#ff6b5a" stroke="none" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" letter-spacing=".4">−58% COMPUTE</text><rect x="22" y="270" width="160" height="80" stroke-width="1.6"/><text x="102.0" y="307.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">REGISTRY</text><text x="102.0" y="325.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">MLflow</text><rect x="206" y="270" width="160" height="80" stroke-width="1.6"/><text x="286.0" y="307.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">DEPLOY</text><text x="286.0" y="325.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">CI/CD · Terraform</text><rect x="206" y="394" width="160" height="80" stroke-width="1.6"/><text x="286.0" y="431.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">MAINTENANCE ALERTS</text><text x="286.0" y="449.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">alert backend</text><rect x="22" y="394" width="160" height="80" stroke-width="1.6" stroke-dasharray="6 4"/><text x="102.0" y="431.0" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo Narrow, Arial Narrow, sans-serif" font-weight="700" font-size="14" letter-spacing=".4">MONITOR</text><text x="102.0" y="449.0" text-anchor="middle" fill="currentColor" stroke="none" opacity=".72" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11">drift · accuracy · cost</text><path d="M182,62.0 H204" stroke-width="1.3" marker-end="url(#ah-n)"/><path d="M286.0,102 V144" stroke-width="1.3" marker-end="url(#ah-n)"/><path d="M206,186.0 H184" stroke-width="1.3" marker-end="url(#ah-n)"/><path d="M102.0,226 V268" stroke-width="1.3" marker-end="url(#ah-n)"/><path d="M182,310.0 H204" stroke-width="1.3" marker-end="url(#ah-n)"/><path d="M286.0,350 V392" stroke-width="1.3" marker-end="url(#ah-n)"/><path d="M206,434.0 H184" stroke-width="1.3" marker-end="url(#ah-n)"/><path d="M22,434.0 H11.0 V186.0 H20" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#ah-n)"/></svg></div>
+        <figcaption class="lab">Platform schematic, simplified</figcaption>
       </figure>
     </article>
 
-    <article class="detail">
+    <article class="job">
       <div>
-        <span class="an">Detail B · Booz Allen Hamilton · U.S. Navy</span>
+        <span class="lab">Booz Allen Hamilton · U.S. Navy</span>
         <h3>F/A-18 Super Hornet prototype</h3>
-        <p class="t">Data Scientist</p>
-        <p class="d">I built the prototype deep-learning predictive-maintenance system for the Navy's Super Hornet fleet, plus an ML classifier for air-traffic-control maintenance workflows.</p>
-        <div class="res"><span><b class="num">$10M+</b>new contract won</span><span><b class="num">$2M+</b>cost savings</span></div>
+        <p class="role">Data Scientist</p>
+        <p class="d">I built the prototype deep-learning predictive-maintenance system for the Navy's Super Hornet fleet, and an ML classifier for air-traffic-control maintenance workflows.</p>
+        <div class="res">
+          <div><b class="num">$10M+</b><span>new contract won</span></div>
+          <div><b class="num">$2M+</b><span>cost savings</span></div>
+        </div>
       </div>
-      <figure class="dwg" style="margin:0">
-        <span class="an dlab">Detail B · Scale NTS</span>
-        <span class="cl" style="top:6px;right:0"><i></i>$10M+ contract</span>
+      <figure>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 1552 1091" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="F/A-18F Super Hornet traced from a U.S. Navy photo, plan view"><path d="M-20,546 H1532" stroke-width="1" stroke-dasharray="14 4 2 4" opacity=".45" vector-effect="non-scaling-stroke"/><path d="M10,287 L13,296 L106,460 L111,466 L128,468 L125,472 L86,487 L85,524 L88,528 L138,543 L138,547 L135,549 L88,562 L85,566 L86,603 L125,618 L128,622 L111,624 L106,630 L10,800 L12,808 L32,842 L116,842 L253,714 L260,710 L270,699 L279,695 L287,683 L319,654 L340,648 L365,647 L369,649 L387,649 L428,645 L429,647 L411,656 L408,660 L414,902 L419,906 L415,913 L419,1051 L421,1066 L423,1068 L432,1068 L440,1077 L448,1080 L626,1080 L654,1078 L653,1073 L644,1069 L590,1068 L582,1065 L579,1062 L579,1057 L651,929 L651,925 L639,923 L637,920 L641,915 L657,909 L657,904 L652,901 L651,897 L678,846 L689,837 L696,839 L735,837 L733,831 L696,825 L694,819 L745,725 L762,698 L849,691 L898,682 L947,669 L1032,639 L1148,586 L1156,584 L1217,583 L1219,581 L1301,581 L1304,578 L1390,577 L1466,562 L1489,555 L1501,548 L1500,540 L1489,535 L1442,522 L1419,520 L1399,514 L1304,512 L1301,509 L1219,509 L1217,507 L1156,506 L1148,504 L1032,451 L947,421 L898,408 L849,399 L762,392 L745,365 L694,271 L696,265 L733,259 L735,253 L712,251 L689,253 L678,244 L652,196 L651,191 L657,186 L657,181 L641,175 L637,170 L639,167 L651,165 L651,161 L579,33 L579,28 L590,22 L644,21 L654,16 L654,12 L448,10 L440,13 L432,22 L423,22 L421,24 L415,143 L415,177 L419,184 L414,188 L408,430 L411,434 L429,443 L428,445 L387,441 L369,441 L365,443 L340,442 L319,436 L287,407 L279,395 L270,391 L260,380 L253,376 L116,248 L32,248Z" stroke-width="2" vector-effect="non-scaling-stroke"/><path d="M742,462 L763,498 M742,629 L763,593 M766,497 L745,461 M766,594 L745,630 M742,441 L711,435 M742,650 L711,656 M133,472 L166,465 M133,619 L166,626 M326,447 L299,449 M326,644 L299,642 M1116,501 L1089,502 M1116,590 L1089,589 M464,441 L432,437 M464,650 L432,654 M653,504 L591,519 M653,587 L591,572 M269,454 L331,450 M269,637 L331,641 M487,253 L522,250 M487,838 L522,841 M484,217 L487,246 M484,874 L487,845 M468,185 L424,180 M468,906 L424,911 M1089,500 L1052,502 M1089,591 L1052,589 M463,68 L471,120 M463,1023 L471,971 M1058,504 L1092,504 M1058,587 L1092,587 M472,184 L468,142 M472,907 L468,949 M492,286 L512,411 M492,805 L512,680 M297,449 L269,451 M297,642 L269,640 M178,539 L207,543 M178,552 L207,548 M1102,538 L1128,538 M1102,553 L1128,553 M550,442 L519,444 M550,649 L519,647 M681,437 L723,442 M681,654 L723,649 M521,440 L486,441 M521,651 L486,650 M465,144 L470,186 M465,947 L470,905 M472,113 L467,69 M472,978 L467,1022 M474,141 L478,173 M474,950 L478,918 M481,173 L477,143 M481,918 L477,948 M523,247 L492,250 M523,844 L492,841 M483,279 L493,354 M483,812 L493,737 M503,412 L486,278 M503,679 L486,813 M504,349 L496,285 M504,742 L496,806 M493,355 L498,398 M493,736 L498,693 M728,431 L701,431 M728,660 L701,660 M787,432 L749,430 M787,659 L749,661 M751,433 L787,435 M751,658 L787,656 M697,436 L663,434 M697,655 L663,657 M158,460 L132,466 M158,631 L132,625 M1049,500 L912,495 M1049,591 L912,596 M912,498 L1051,503 M912,593 L1051,588 M848,498 L797,500 M848,593 L797,591 M511,388 L506,349 M511,703 L506,742 M606,518 L673,504 M606,573 L673,587 M797,503 L847,501 M797,588 L847,590 M753,516 L783,516 M753,575 L783,575 M498,446 L542,446 M498,645 L542,645" stroke-width="1" opacity=".7" vector-effect="non-scaling-stroke"/></svg>
-        <span class="dim"><b>Twin-tail strike fighter · plan</b></span>
+        <figcaption class="lab">F/A-18F, plan view</figcaption>
       </figure>
     </article>
 
-    <div class="others">
-      <div><span class="an">Accenture · federal</span><h3>myUSCIS production ML</h3><p>CI/CD serving millions of API calls a day; 2× model performance at about half the AWS spend.</p></div>
-      <div><span class="an">PG&amp;E · wildfire risk</span><h3>Drone-imagery CV</h3><p>Drone video turned into grid-asset risk scores for inspection and wildfire prevention.</p></div>
-      <div><span class="an">Okta · revenue</span><h3>ARR &amp; churn forecasting</h3><p>Churn and ARR forecasts improved 13% and presented to the C-suite as retention decisions.</p></div>
-      <div><span class="an">Microsoft · sales</span><h3>Sales intelligence</h3><p>Prospect-ranking pipelines used by thousands of sellers.</p></div>
+    <div class="more">
+      <div><span class="lab">Accenture · federal</span><h3>myUSCIS production ML</h3><p>Led MLOps for production models serving millions of API calls a day. Doubled model performance at about half the AWS spend.</p></div>
+      <div><span class="lab">PG&amp;E · wildfire risk</span><h3>Drone-imagery vision</h3><p>Turned drone video into grid-asset risk scores used to prioritize inspections.</p></div>
+      <div><span class="lab">Okta · revenue</span><h3>Churn and ARR forecasts</h3><p>Improved the forecasting models 13% and presented results to the C-suite.</p></div>
+      <div><span class="lab">Microsoft · sales</span><h3>Sales intelligence</h3><p>Prospect-ranking pipelines used by thousands of sellers.</p></div>
     </div>
   </section>
 
-  <section class="sheet pad" id="services">
-    <div class="shead"><h2>Three fixed-scope engagements</h2><span class="sn">Sht 2 of 5 · Services</span></div>
-    <p class="intro">Each has a defined deliverable, a timeline and a result leadership can sign off on. Full-time leadership roles are open too.</p>
+  <section class="sec pad" id="leadership">
+    <div class="head">
+      <h2>Leadership</h2>
+    </div>
+    <div class="lead">
+      <div><span class="lab">Team</span><p>Led a team of about ten across ML, MLOps, DevOps and data engineering.</p></div>
+      <div><span class="lab">Migration</span><p>Owned my team's side of an Azure-to-AWS Databricks migration with Unity Catalog governance.</p></div>
+      <div><span class="lab">Cost</span><p>Cut the platform's compute bill 58%, over $500K a year.</p></div>
+      <div><span class="lab">Executives</span><p>Presented churn and revenue forecasts to Okta's C-suite.</p></div>
+      <div><span class="lab">GenAI</span><p>Built an internal code-generation LLM for my engineering team.</p></div>
+      <div><span class="lab">Speaking</span><p>Spoke on MLOps for PHM systems at the PHM Society Asia-Pacific Conference, University of Tokyo.</p></div>
+      <div><span class="lab">Writing</span><p>Wrote an 826-page book on the mathematics of modern AI.</p></div>
+    </div>
+  </section>
+
+  <section class="sec pad" id="build">
+    <div class="head">
+      <h2>What I build</h2>
+    </div>
+    <div class="caps">
+      <div><h3>Lakehouse ML platforms</h3><p>Databricks, Unity Catalog and MLflow, set up so data, features and models are governed in one place.</p></div>
+      <div><h3>CI/CD for models</h3><p>Registries, promotion gates and Terraform-managed infrastructure, so models ship without hand-offs.</p></div>
+      <div><h3>Monitoring and retraining</h3><p>Drift and accuracy monitoring wired to retraining, with alerts that reach an owner.</p></div>
+      <div><h3>Compute cost control</h3><p>Parallel training and pipeline redesign that cut spend without slowing the team down.</p></div>
+      <div><h3>Audit-ready ML</h3><p>Lineage from raw data to each prediction, for aviation, defense and federal reviews.</p></div>
+      <div><h3>LLM tooling for engineers</h3><p>Internal code-generation tools, fine-tuning, and usage tracking.</p></div>
+    </div>
+  </section>
+
+  <section class="sec pad" id="contract">
+    <div class="head">
+      <h2>Contract work</h2>
+      <p>I take a small number of contract and advisory projects alongside my search for a full-time leadership role.</p>
+    </div>
     <div class="offers">
       <div class="offer">
-        <span class="an">2 weeks · assessment</span>
-        <h3>ML Platform Audit</h3>
-        <p>How your models get from data to production, and what that costs.</p>
-        <ul><li>Cost, reliability and governance review</li><li>Failure-point map, stage by stage</li><li>Prioritized fixes with estimated savings</li><li>Readout for engineering and leadership</li></ul>
-        <span class="out">Deliverable: written roadmap + leadership readout</span>
+        <span class="lab">About 2 weeks</span>
+        <h3>ML platform audit</h3>
+        <p>A review of how your models get from data to production, and what that costs.</p>
+        <ul><li>Cost, reliability and governance review</li><li>Where the handoffs break, stage by stage</li><li>Prioritized fixes with estimated savings</li></ul>
+        <span class="out">You get a written roadmap and a readout for engineering and leadership.</span>
       </div>
       <div class="offer">
-        <span class="an">4–8 weeks · build</span>
-        <h3>Platform Migration Sprint</h3>
+        <span class="lab">About 4–8 weeks</span>
+        <h3>Platform migration</h3>
         <p>Move models, registries and pipelines without breaking production.</p>
-        <ul><li>Databricks, MLflow, Unity Catalog</li><li>Cross-workspace registry migration</li><li>Azure to AWS, or into a governed lakehouse</li><li>CI/CD and drift monitoring at hand-off</li></ul>
-        <span class="out">Deliverable: running platform, runbooks, trained team</span>
+        <ul><li>Databricks, MLflow, Unity Catalog</li><li>Azure to AWS, or into a governed lakehouse</li><li>CI/CD and drift monitoring in place at hand-off</li></ul>
+        <span class="out">You get a running platform, runbooks, and a team that can own it.</span>
       </div>
       <div class="offer">
-        <span class="an">4 weeks · adoption</span>
-        <h3>LLM Enablement for Engineering</h3>
-        <p>LLMs working inside your engineering team, with cost and risk under control.</p>
-        <ul><li>Internal code-generation and assistant tools</li><li>Evaluation, guardrails, usage policy</li><li>Cost tracking per team and use case</li></ul>
-        <span class="out">Deliverable: tools in daily use, measured baseline</span>
+        <span class="lab">About 4 weeks</span>
+        <h3>LLM tools for engineering</h3>
+        <p>Put LLMs to work inside your engineering team with cost and risk under control.</p>
+        <ul><li>Code-generation and assistant tools</li><li>Evaluation, guardrails and usage policy</li><li>Cost tracking per team</li></ul>
+        <span class="out">You get tools in daily use and a measured baseline.</span>
       </div>
     </div>
-    <ol class="steps">
-      <li><b>Call</b><span>30 minutes on the problem.</span></li>
-      <li><b>Scope</b><span>One-page proposal, price, dates.</span></li>
-      <li><b>Deliver</b><span>Weekly check-ins against plan.</span></li>
-      <li><b>Hand off</b><span>Runbooks and an owning team.</span></li>
+    <ol class="steps" aria-label="How to reach out">
+      <li><b>Email</b><span>Send a few lines on the role or the problem.</span></li>
+      <li><b>Call</b><span>I reply with times for a 30-minute call.</span></li>
+      <li><b>Proposal</b><span>For contract work, a one-page scope with price and dates.</span></li>
+      <li><b>Start</b><span>Weekly check-ins against the plan.</span></li>
     </ol>
-    <div class="modes">
-      <div><span class="an">Full-time</span><h3>Staff · Principal · Head of ML Platform · Director of AI</h3><p>Remote US, or hybrid in Salt Lake City.</p></div>
-      <div><span class="an">Best fit</span><h3>Aviation · Defense · Energy · Federal · Health</h3><p>Regulated, audited, high-stakes ML. Cleared work welcome.</p></div>
-    </div>
   </section>
 
-  <section class="sheet pad" id="build">
-    <div class="shead"><h2>I also build real things</h2><span class="sn">Sht 3 of 5 · Real estate &amp; construction</span></div>
+  <section class="sec pad" id="realestate">
     <div class="re">
       <div>
-        <p class="intro" style="margin-top:0">I own and operate a rental and construction portfolio across two states, and I run the construction projects myself as lead project manager. It's the same job as an ML platform: scope, budget, contractors, inspections, and a result that has to pass review.</p>
-        <div class="re-stats" style="margin-top:24px">
-          <div><b class="num red">$1.25M</b><span class="an">Portfolio value</span></div>
-          <div><b class="num">2</b><span class="an">States · Utah &amp; Pennsylvania</span></div>
-          <div><b class="w">Rentals</b><span class="an">Owned and operated</span></div>
-          <div><b class="w">Construction</b><span class="an">Lead project manager</span></div>
+        <div class="head" style="margin-bottom:18px"><h2>Real estate and construction</h2></div>
+        <p>I own a growing rental and construction portfolio across Utah and Pennsylvania. I use my own ML models to screen markets and find deals, then run the construction projects myself as lead project manager, from budgets and contractor selection to permits and inspections.</p>
+        <div class="re-nums">
+          <div><b class="num red">$1.25M</b><span>portfolio value</span></div>
+          <div><b>2 states</b><span>Utah and Pennsylvania</span></div>
+          <div><b>Owner</b><span>ML deal sourcing, lead PM</span></div>
         </div>
-        <ul class="re-list">
-          <li><i>01</i><span>Scope, budget and schedule for each project</span></li>
-          <li><i>02</i><span>Contractor selection and day-to-day coordination</span></li>
-          <li><i>03</i><span>Code, permit and rental-license compliance</span></li>
-          <li><i>04</i><span>Acquisition analysis and hold/sell decisions</span></li>
-        </ul>
       </div>
-      <figure class="elev" style="margin:0">
-        <span class="an dlab">Elevation · Philadelphia row houses · NTS</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -40 840 1120" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="square" role="img" aria-label="Front elevation of two Philadelphia row houses, drawn from a photo"><defs><clipPath id="bclip"><rect x="-10" y="-40" width="746" height="1060"/></clipPath></defs><g clip-path="url(#bclip)"><path d="M292,58H733 M367.3,88V178 M388.7,88V178 M346.0,103.0h64 M346.0,118.0h64 M346.0,148.0h64 M346.0,163.0h64 M308.3,98h31.7 M308.3,107h31.7 M308.3,116h31.7 M308.3,125h31.7 M308.3,134h31.7 M308.3,143h31.7 M308.3,152h31.7 M308.3,161h31.7 M308.3,170h31.7 M416.0,98h31.7 M416.0,107h31.7 M416.0,116h31.7 M416.0,125h31.7 M416.0,134h31.7 M416.0,143h31.7 M416.0,152h31.7 M416.0,161h31.7 M416.0,170h31.7 M521.3,88V178 M542.7,88V178 M500.0,103.0h64 M500.0,118.0h64 M500.0,148.0h64 M500.0,163.0h64 M462.3,98h31.7 M462.3,107h31.7 M462.3,116h31.7 M462.3,125h31.7 M462.3,134h31.7 M462.3,143h31.7 M462.3,152h31.7 M462.3,161h31.7 M462.3,170h31.7 M570.0,98h31.7 M570.0,107h31.7 M570.0,116h31.7 M570.0,125h31.7 M570.0,134h31.7 M570.0,143h31.7 M570.0,152h31.7 M570.0,161h31.7 M570.0,170h31.7 M687.3,88V178 M708.7,88V178 M666.0,103.0h64 M666.0,118.0h64 M666.0,148.0h64 M666.0,163.0h64 M628.3,98h31.7 M628.3,107h31.7 M628.3,116h31.7 M628.3,125h31.7 M628.3,134h31.7 M628.3,143h31.7 M628.3,152h31.7 M628.3,161h31.7 M628.3,170h31.7 M736.0,98h31.7 M736.0,107h31.7 M736.0,116h31.7 M736.0,125h31.7 M736.0,134h31.7 M736.0,143h31.7 M736.0,152h31.7 M736.0,161h31.7 M736.0,170h31.7 M369.3,314V478 M390.7,314V478 M348.0,341.3h64 M348.0,368.7h64 M348.0,423.3h64 M348.0,450.7h64 M310.3,324h31.7 M310.3,333h31.7 M310.3,342h31.7 M310.3,351h31.7 M310.3,360h31.7 M310.3,369h31.7 M310.3,378h31.7 M310.3,387h31.7 M310.3,396h31.7 M310.3,405h31.7 M310.3,414h31.7 M310.3,423h31.7 M310.3,432h31.7 M310.3,441h31.7 M310.3,450h31.7 M310.3,459h31.7 M310.3,468h31.7 M418.0,324h31.7 M418.0,333h31.7 M418.0,342h31.7 M418.0,351h31.7 M418.0,360h31.7 M418.0,369h31.7 M418.0,378h31.7 M418.0,387h31.7 M418.0,396h31.7 M418.0,405h31.7 M418.0,414h31.7 M418.0,423h31.7 M418.0,432h31.7 M418.0,441h31.7 M418.0,450h31.7 M418.0,459h31.7 M418.0,468h31.7 M521.3,314V478 M542.7,314V478 M500.0,341.3h64 M500.0,368.7h64 M500.0,423.3h64 M500.0,450.7h64 M462.3,324h31.7 M462.3,333h31.7 M462.3,342h31.7 M462.3,351h31.7 M462.3,360h31.7 M462.3,369h31.7 M462.3,378h31.7 M462.3,387h31.7 M462.3,396h31.7 M462.3,405h31.7 M462.3,414h31.7 M462.3,423h31.7 M462.3,432h31.7 M462.3,441h31.7 M462.3,450h31.7 M462.3,459h31.7 M462.3,468h31.7 M570.0,324h31.7 M570.0,333h31.7 M570.0,342h31.7 M570.0,351h31.7 M570.0,360h31.7 M570.0,369h31.7 M570.0,378h31.7 M570.0,387h31.7 M570.0,396h31.7 M570.0,405h31.7 M570.0,414h31.7 M570.0,423h31.7 M570.0,432h31.7 M570.0,441h31.7 M570.0,450h31.7 M570.0,459h31.7 M570.0,468h31.7 M685.3,314V478 M706.7,314V478 M664.0,341.3h64 M664.0,368.7h64 M664.0,423.3h64 M664.0,450.7h64 M626.3,324h31.7 M626.3,333h31.7 M626.3,342h31.7 M626.3,351h31.7 M626.3,360h31.7 M626.3,369h31.7 M626.3,378h31.7 M626.3,387h31.7 M626.3,396h31.7 M626.3,405h31.7 M626.3,414h31.7 M626.3,423h31.7 M626.3,432h31.7 M626.3,441h31.7 M626.3,450h31.7 M626.3,459h31.7 M626.3,468h31.7 M734.0,324h31.7 M734.0,333h31.7 M734.0,342h31.7 M734.0,351h31.7 M734.0,360h31.7 M734.0,369h31.7 M734.0,378h31.7 M734.0,387h31.7 M734.0,396h31.7 M734.0,405h31.7 M734.0,414h31.7 M734.0,423h31.7 M734.0,432h31.7 M734.0,441h31.7 M734.0,450h31.7 M734.0,459h31.7 M734.0,468h31.7 M372,668L343.4,651.5 M372,668L355.5,639.4 M372,668L372.0,635.0 M372,668L388.5,639.4 M372,668L400.6,651.5 M347.0,714h21.0v142h-21.0Z M376,714h21.0v142h-21.0Z M533.3,628V802 M554.7,628V802 M512.0,657.0h64 M512.0,686.0h64 M512.0,744.0h64 M512.0,773.0h64 M474.3,638h31.7 M474.3,647h31.7 M474.3,656h31.7 M474.3,665h31.7 M474.3,674h31.7 M474.3,683h31.7 M474.3,692h31.7 M474.3,701h31.7 M474.3,710h31.7 M474.3,719h31.7 M474.3,728h31.7 M474.3,737h31.7 M474.3,746h31.7 M474.3,755h31.7 M474.3,764h31.7 M474.3,773h31.7 M474.3,782h31.7 M474.3,791h31.7 M582.0,638h31.7 M582.0,647h31.7 M582.0,656h31.7 M582.0,665h31.7 M582.0,674h31.7 M582.0,683h31.7 M582.0,692h31.7 M582.0,701h31.7 M582.0,710h31.7 M582.0,719h31.7 M582.0,728h31.7 M582.0,737h31.7 M582.0,746h31.7 M582.0,755h31.7 M582.0,764h31.7 M582.0,773h31.7 M582.0,782h31.7 M582.0,791h31.7 M689.3,628V802 M710.7,628V802 M668.0,657.0h64 M668.0,686.0h64 M668.0,744.0h64 M668.0,773.0h64 M630.3,638h31.7 M630.3,647h31.7 M630.3,656h31.7 M630.3,665h31.7 M630.3,674h31.7 M630.3,683h31.7 M630.3,692h31.7 M630.3,701h31.7 M630.3,710h31.7 M630.3,719h31.7 M630.3,728h31.7 M630.3,737h31.7 M630.3,746h31.7 M630.3,755h31.7 M630.3,764h31.7 M630.3,773h31.7 M630.3,782h31.7 M630.3,791h31.7 M738.0,638h31.7 M738.0,647h31.7 M738.0,656h31.7 M738.0,665h31.7 M738.0,674h31.7 M738.0,683h31.7 M738.0,692h31.7 M738.0,701h31.7 M738.0,710h31.7 M738.0,719h31.7 M738.0,728h31.7 M738.0,737h31.7 M738.0,746h31.7 M738.0,755h31.7 M738.0,764h31.7 M738.0,773h31.7 M738.0,782h31.7 M738.0,791h31.7 M430,885H733 M505,912h80v70h-80Z M515,914V980 M527,914V980 M539,914V980 M551,914V980 M563,914V980 M575,914V980 M0,70H292 M102.3,104V196 M121.7,104V196 M83.0,119.3h58 M83.0,134.7h58 M83.0,165.3h58 M83.0,180.7h58 M56.0,114h21.0 M56.0,123h21.0 M56.0,132h21.0 M56.0,141h21.0 M56.0,150h21.0 M56.0,159h21.0 M56.0,168h21.0 M56.0,177h21.0 M56.0,186h21.0 M147.0,114h21.0 M147.0,123h21.0 M147.0,132h21.0 M147.0,141h21.0 M147.0,150h21.0 M147.0,159h21.0 M147.0,168h21.0 M147.0,177h21.0 M147.0,186h21.0 M230.3,104V196 M249.7,104V196 M211.0,119.3h58 M211.0,134.7h58 M211.0,165.3h58 M211.0,180.7h58 M184.0,114h21.0 M184.0,123h21.0 M184.0,132h21.0 M184.0,141h21.0 M184.0,150h21.0 M184.0,159h21.0 M184.0,168h21.0 M184.0,177h21.0 M184.0,186h21.0 M275.0,114h21.0 M275.0,123h21.0 M275.0,132h21.0 M275.0,141h21.0 M275.0,150h21.0 M275.0,159h21.0 M275.0,168h21.0 M275.0,177h21.0 M275.0,186h21.0 M100.3,324V482 M119.7,324V482 M81.0,350.3h58 M81.0,376.7h58 M81.0,429.3h58 M81.0,455.7h58 M54.0,334h21.0 M54.0,343h21.0 M54.0,352h21.0 M54.0,361h21.0 M54.0,370h21.0 M54.0,379h21.0 M54.0,388h21.0 M54.0,397h21.0 M54.0,406h21.0 M54.0,415h21.0 M54.0,424h21.0 M54.0,433h21.0 M54.0,442h21.0 M54.0,451h21.0 M54.0,460h21.0 M54.0,469h21.0 M145.0,334h21.0 M145.0,343h21.0 M145.0,352h21.0 M145.0,361h21.0 M145.0,370h21.0 M145.0,379h21.0 M145.0,388h21.0 M145.0,397h21.0 M145.0,406h21.0 M145.0,415h21.0 M145.0,424h21.0 M145.0,433h21.0 M145.0,442h21.0 M145.0,451h21.0 M145.0,460h21.0 M145.0,469h21.0 M230.3,324V482 M249.7,324V482 M211.0,350.3h58 M211.0,376.7h58 M211.0,429.3h58 M211.0,455.7h58 M184.0,334h21.0 M184.0,343h21.0 M184.0,352h21.0 M184.0,361h21.0 M184.0,370h21.0 M184.0,379h21.0 M184.0,388h21.0 M184.0,397h21.0 M184.0,406h21.0 M184.0,415h21.0 M184.0,424h21.0 M184.0,433h21.0 M184.0,442h21.0 M184.0,451h21.0 M184.0,460h21.0 M184.0,469h21.0 M275.0,334h21.0 M275.0,343h21.0 M275.0,352h21.0 M275.0,361h21.0 M275.0,370h21.0 M275.0,379h21.0 M275.0,388h21.0 M275.0,397h21.0 M275.0,406h21.0 M275.0,415h21.0 M275.0,424h21.0 M275.0,433h21.0 M275.0,442h21.0 M275.0,451h21.0 M275.0,460h21.0 M275.0,469h21.0 M102.0,618V782 M122.0,618V782 M82.0,645.3h60 M82.0,672.7h60 M82.0,727.3h60 M82.0,754.7h60 M54.0,628h22.0 M54.0,637h22.0 M54.0,646h22.0 M54.0,655h22.0 M54.0,664h22.0 M54.0,673h22.0 M54.0,682h22.0 M54.0,691h22.0 M54.0,700h22.0 M54.0,709h22.0 M54.0,718h22.0 M54.0,727h22.0 M54.0,736h22.0 M54.0,745h22.0 M54.0,754h22.0 M54.0,763h22.0 M54.0,772h22.0 M148.0,628h22.0 M148.0,637h22.0 M148.0,646h22.0 M148.0,655h22.0 M148.0,664h22.0 M148.0,673h22.0 M148.0,682h22.0 M148.0,691h22.0 M148.0,700h22.0 M148.0,709h22.0 M148.0,718h22.0 M148.0,727h22.0 M148.0,736h22.0 M148.0,745h22.0 M148.0,754h22.0 M148.0,763h22.0 M148.0,772h22.0 M236,664L209.2,648.5 M236,664L220.5,637.2 M236,664L236.0,633.0 M236,664L251.5,637.2 M236,664L262.8,648.5 M213.0,710h19.0v138h-19.0Z M240,710h19.0v138h-19.0Z M280,890H446 M260,908H452 M240,926H458 M220,944H464 M200,962H470 M180,980H476 M300,872L180,998M440,872L476,998" stroke-width="0.8" opacity=".6" vector-effect="non-scaling-stroke"/><path d="M292,52V870M733,40V870 M292,30h441v22h-441Z M346.0,88h64v90h-64Z M346.0,133.0h64 M340.0,178h76v10h-76Z M304.32,88h39.68v90h-39.68Z M412.0,88h39.68v90h-39.68Z M500.0,88h64v90h-64Z M500.0,133.0h64 M494.0,178h76v10h-76Z M458.32,88h39.68v90h-39.68Z M566.0,88h39.68v90h-39.68Z M666.0,88h64v90h-64Z M666.0,133.0h64 M660.0,178h76v10h-76Z M624.32,88h39.68v90h-39.68Z M732.0,88h39.68v90h-39.68Z M348.0,314h64v164h-64Z M348.0,396.0h64 M342.0,478h76v10h-76Z M340.0,292h80v14h-80Z M373,284h14v22h-14Z M306.32,314h39.68v164h-39.68Z M414.0,314h39.68v164h-39.68Z M500.0,314h64v164h-64Z M500.0,396.0h64 M494.0,478h76v10h-76Z M492.0,292h80v14h-80Z M525,284h14v22h-14Z M458.32,314h39.68v164h-39.68Z M566.0,314h39.68v164h-39.68Z M664.0,314h64v164h-64Z M664.0,396.0h64 M658.0,478h76v10h-76Z M656.0,292h80v14h-80Z M689,284h14v22h-14Z M622.32,314h39.68v164h-39.68Z M730.0,314h39.68v164h-39.68Z M325.0,868V668A47.0,47.0 0 0 1 419.0,668V868 M339.0,868V668A33.0,33.0 0 0 1 405.0,668V868 M339.0,704h66 M365,611.0h14v18h-14Z M512.0,628h64v174h-64Z M512.0,715.0h64 M506.0,802h76v10h-76Z M504.0,606h80v14h-80Z M537,598h14v22h-14Z M470.32,628h39.68v174h-39.68Z M578.0,628h39.68v174h-39.68Z M668.0,628h64v174h-64Z M668.0,715.0h64 M662.0,802h76v10h-76Z M660.0,606h80v14h-80Z M693,598h14v22h-14Z M626.32,628h39.68v174h-39.68Z M734.0,628h39.68v174h-39.68Z M292,870H733 M0,64V870 M0,42h292v22h-292Z M83.0,104h58v92h-58Z M83.0,150.0h58 M77.0,196h70v10h-70Z M52.0,104h29.0v92h-29.0Z M143.0,104h29.0v92h-29.0Z M211.0,104h58v92h-58Z M211.0,150.0h58 M205.0,196h70v10h-70Z M180.0,104h29.0v92h-29.0Z M271.0,104h29.0v92h-29.0Z M81.0,324h58v158h-58Z M81.0,403.0h58 M75.0,482h70v10h-70Z M73.0,302h74v14h-74Z M103,294h14v22h-14Z M50.0,324h29.0v158h-29.0Z M141.0,324h29.0v158h-29.0Z M211.0,324h58v158h-58Z M211.0,403.0h58 M205.0,482h70v10h-70Z M203.0,302h74v14h-74Z M233,294h14v22h-14Z M180.0,324h29.0v158h-29.0Z M271.0,324h29.0v158h-29.0Z M82.0,618h60v164h-60Z M82.0,700.0h60 M76.0,782h72v10h-72Z M74.0,596h76v14h-76Z M105,588h14v22h-14Z M50.0,618h30.0v164h-30.0Z M144.0,618h30.0v164h-30.0Z M191.0,860V664A45.0,45.0 0 0 1 281.0,664V860 M205.0,860V664A31.0,31.0 0 0 1 267.0,664V860 M205.0,700h62 M229,609.0h14v18h-14Z M128,0h90v30h-90Z M128,0L173,-22L218,0 M0,870H292 M300,872H440" stroke-width="1.6" vector-effect="non-scaling-stroke"/><path d="M0,1000H733" stroke-width="2.6" vector-effect="non-scaling-stroke"/></g><g stroke="#9db6d6" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M770,1000V30 M762,1000h16 M762,30h16 M762,135h16 M762,395h16 M762,715h16" vector-effect="non-scaling-stroke"/><path d="M0,1040H733 M0,1032v16 M292,1032v16 M733,1032v16" vector-effect="non-scaling-stroke"/></g><g fill="#9db6d6" stroke="none" font-family="JetBrains Mono, monospace" font-size="15" letter-spacing="1"><text x="786" y="140">L3</text><text x="786" y="400">L2</text><text x="786" y="720">L1</text><text x="146" y="1066" text-anchor="middle">UNIT A</text><text x="512" y="1066" text-anchor="middle">UNIT B</text></g></svg>
-        <span class="cl" style="top:17%;right:0"><i></i>PM · Lead</span>
-      </figure>
+      <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -40 840 1120" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="square" role="img" aria-label="Front elevation of two Philadelphia row houses, drawn from a photo"><defs><clipPath id="bclip"><rect x="-10" y="-40" width="746" height="1060"/></clipPath></defs><g clip-path="url(#bclip)"><path d="M292,58H733 M367.3,88V178 M388.7,88V178 M346.0,103.0h64 M346.0,118.0h64 M346.0,148.0h64 M346.0,163.0h64 M308.3,98h31.7 M308.3,107h31.7 M308.3,116h31.7 M308.3,125h31.7 M308.3,134h31.7 M308.3,143h31.7 M308.3,152h31.7 M308.3,161h31.7 M308.3,170h31.7 M416.0,98h31.7 M416.0,107h31.7 M416.0,116h31.7 M416.0,125h31.7 M416.0,134h31.7 M416.0,143h31.7 M416.0,152h31.7 M416.0,161h31.7 M416.0,170h31.7 M521.3,88V178 M542.7,88V178 M500.0,103.0h64 M500.0,118.0h64 M500.0,148.0h64 M500.0,163.0h64 M462.3,98h31.7 M462.3,107h31.7 M462.3,116h31.7 M462.3,125h31.7 M462.3,134h31.7 M462.3,143h31.7 M462.3,152h31.7 M462.3,161h31.7 M462.3,170h31.7 M570.0,98h31.7 M570.0,107h31.7 M570.0,116h31.7 M570.0,125h31.7 M570.0,134h31.7 M570.0,143h31.7 M570.0,152h31.7 M570.0,161h31.7 M570.0,170h31.7 M687.3,88V178 M708.7,88V178 M666.0,103.0h64 M666.0,118.0h64 M666.0,148.0h64 M666.0,163.0h64 M628.3,98h31.7 M628.3,107h31.7 M628.3,116h31.7 M628.3,125h31.7 M628.3,134h31.7 M628.3,143h31.7 M628.3,152h31.7 M628.3,161h31.7 M628.3,170h31.7 M736.0,98h31.7 M736.0,107h31.7 M736.0,116h31.7 M736.0,125h31.7 M736.0,134h31.7 M736.0,143h31.7 M736.0,152h31.7 M736.0,161h31.7 M736.0,170h31.7 M369.3,314V478 M390.7,314V478 M348.0,341.3h64 M348.0,368.7h64 M348.0,423.3h64 M348.0,450.7h64 M310.3,324h31.7 M310.3,333h31.7 M310.3,342h31.7 M310.3,351h31.7 M310.3,360h31.7 M310.3,369h31.7 M310.3,378h31.7 M310.3,387h31.7 M310.3,396h31.7 M310.3,405h31.7 M310.3,414h31.7 M310.3,423h31.7 M310.3,432h31.7 M310.3,441h31.7 M310.3,450h31.7 M310.3,459h31.7 M310.3,468h31.7 M418.0,324h31.7 M418.0,333h31.7 M418.0,342h31.7 M418.0,351h31.7 M418.0,360h31.7 M418.0,369h31.7 M418.0,378h31.7 M418.0,387h31.7 M418.0,396h31.7 M418.0,405h31.7 M418.0,414h31.7 M418.0,423h31.7 M418.0,432h31.7 M418.0,441h31.7 M418.0,450h31.7 M418.0,459h31.7 M418.0,468h31.7 M521.3,314V478 M542.7,314V478 M500.0,341.3h64 M500.0,368.7h64 M500.0,423.3h64 M500.0,450.7h64 M462.3,324h31.7 M462.3,333h31.7 M462.3,342h31.7 M462.3,351h31.7 M462.3,360h31.7 M462.3,369h31.7 M462.3,378h31.7 M462.3,387h31.7 M462.3,396h31.7 M462.3,405h31.7 M462.3,414h31.7 M462.3,423h31.7 M462.3,432h31.7 M462.3,441h31.7 M462.3,450h31.7 M462.3,459h31.7 M462.3,468h31.7 M570.0,324h31.7 M570.0,333h31.7 M570.0,342h31.7 M570.0,351h31.7 M570.0,360h31.7 M570.0,369h31.7 M570.0,378h31.7 M570.0,387h31.7 M570.0,396h31.7 M570.0,405h31.7 M570.0,414h31.7 M570.0,423h31.7 M570.0,432h31.7 M570.0,441h31.7 M570.0,450h31.7 M570.0,459h31.7 M570.0,468h31.7 M685.3,314V478 M706.7,314V478 M664.0,341.3h64 M664.0,368.7h64 M664.0,423.3h64 M664.0,450.7h64 M626.3,324h31.7 M626.3,333h31.7 M626.3,342h31.7 M626.3,351h31.7 M626.3,360h31.7 M626.3,369h31.7 M626.3,378h31.7 M626.3,387h31.7 M626.3,396h31.7 M626.3,405h31.7 M626.3,414h31.7 M626.3,423h31.7 M626.3,432h31.7 M626.3,441h31.7 M626.3,450h31.7 M626.3,459h31.7 M626.3,468h31.7 M734.0,324h31.7 M734.0,333h31.7 M734.0,342h31.7 M734.0,351h31.7 M734.0,360h31.7 M734.0,369h31.7 M734.0,378h31.7 M734.0,387h31.7 M734.0,396h31.7 M734.0,405h31.7 M734.0,414h31.7 M734.0,423h31.7 M734.0,432h31.7 M734.0,441h31.7 M734.0,450h31.7 M734.0,459h31.7 M734.0,468h31.7 M372,668L343.4,651.5 M372,668L355.5,639.4 M372,668L372.0,635.0 M372,668L388.5,639.4 M372,668L400.6,651.5 M347.0,714h21.0v142h-21.0Z M376,714h21.0v142h-21.0Z M533.3,628V802 M554.7,628V802 M512.0,657.0h64 M512.0,686.0h64 M512.0,744.0h64 M512.0,773.0h64 M474.3,638h31.7 M474.3,647h31.7 M474.3,656h31.7 M474.3,665h31.7 M474.3,674h31.7 M474.3,683h31.7 M474.3,692h31.7 M474.3,701h31.7 M474.3,710h31.7 M474.3,719h31.7 M474.3,728h31.7 M474.3,737h31.7 M474.3,746h31.7 M474.3,755h31.7 M474.3,764h31.7 M474.3,773h31.7 M474.3,782h31.7 M474.3,791h31.7 M582.0,638h31.7 M582.0,647h31.7 M582.0,656h31.7 M582.0,665h31.7 M582.0,674h31.7 M582.0,683h31.7 M582.0,692h31.7 M582.0,701h31.7 M582.0,710h31.7 M582.0,719h31.7 M582.0,728h31.7 M582.0,737h31.7 M582.0,746h31.7 M582.0,755h31.7 M582.0,764h31.7 M582.0,773h31.7 M582.0,782h31.7 M582.0,791h31.7 M689.3,628V802 M710.7,628V802 M668.0,657.0h64 M668.0,686.0h64 M668.0,744.0h64 M668.0,773.0h64 M630.3,638h31.7 M630.3,647h31.7 M630.3,656h31.7 M630.3,665h31.7 M630.3,674h31.7 M630.3,683h31.7 M630.3,692h31.7 M630.3,701h31.7 M630.3,710h31.7 M630.3,719h31.7 M630.3,728h31.7 M630.3,737h31.7 M630.3,746h31.7 M630.3,755h31.7 M630.3,764h31.7 M630.3,773h31.7 M630.3,782h31.7 M630.3,791h31.7 M738.0,638h31.7 M738.0,647h31.7 M738.0,656h31.7 M738.0,665h31.7 M738.0,674h31.7 M738.0,683h31.7 M738.0,692h31.7 M738.0,701h31.7 M738.0,710h31.7 M738.0,719h31.7 M738.0,728h31.7 M738.0,737h31.7 M738.0,746h31.7 M738.0,755h31.7 M738.0,764h31.7 M738.0,773h31.7 M738.0,782h31.7 M738.0,791h31.7 M430,885H733 M505,912h80v70h-80Z M515,914V980 M527,914V980 M539,914V980 M551,914V980 M563,914V980 M575,914V980 M0,70H292 M102.3,104V196 M121.7,104V196 M83.0,119.3h58 M83.0,134.7h58 M83.0,165.3h58 M83.0,180.7h58 M56.0,114h21.0 M56.0,123h21.0 M56.0,132h21.0 M56.0,141h21.0 M56.0,150h21.0 M56.0,159h21.0 M56.0,168h21.0 M56.0,177h21.0 M56.0,186h21.0 M147.0,114h21.0 M147.0,123h21.0 M147.0,132h21.0 M147.0,141h21.0 M147.0,150h21.0 M147.0,159h21.0 M147.0,168h21.0 M147.0,177h21.0 M147.0,186h21.0 M230.3,104V196 M249.7,104V196 M211.0,119.3h58 M211.0,134.7h58 M211.0,165.3h58 M211.0,180.7h58 M184.0,114h21.0 M184.0,123h21.0 M184.0,132h21.0 M184.0,141h21.0 M184.0,150h21.0 M184.0,159h21.0 M184.0,168h21.0 M184.0,177h21.0 M184.0,186h21.0 M275.0,114h21.0 M275.0,123h21.0 M275.0,132h21.0 M275.0,141h21.0 M275.0,150h21.0 M275.0,159h21.0 M275.0,168h21.0 M275.0,177h21.0 M275.0,186h21.0 M100.3,324V482 M119.7,324V482 M81.0,350.3h58 M81.0,376.7h58 M81.0,429.3h58 M81.0,455.7h58 M54.0,334h21.0 M54.0,343h21.0 M54.0,352h21.0 M54.0,361h21.0 M54.0,370h21.0 M54.0,379h21.0 M54.0,388h21.0 M54.0,397h21.0 M54.0,406h21.0 M54.0,415h21.0 M54.0,424h21.0 M54.0,433h21.0 M54.0,442h21.0 M54.0,451h21.0 M54.0,460h21.0 M54.0,469h21.0 M145.0,334h21.0 M145.0,343h21.0 M145.0,352h21.0 M145.0,361h21.0 M145.0,370h21.0 M145.0,379h21.0 M145.0,388h21.0 M145.0,397h21.0 M145.0,406h21.0 M145.0,415h21.0 M145.0,424h21.0 M145.0,433h21.0 M145.0,442h21.0 M145.0,451h21.0 M145.0,460h21.0 M145.0,469h21.0 M230.3,324V482 M249.7,324V482 M211.0,350.3h58 M211.0,376.7h58 M211.0,429.3h58 M211.0,455.7h58 M184.0,334h21.0 M184.0,343h21.0 M184.0,352h21.0 M184.0,361h21.0 M184.0,370h21.0 M184.0,379h21.0 M184.0,388h21.0 M184.0,397h21.0 M184.0,406h21.0 M184.0,415h21.0 M184.0,424h21.0 M184.0,433h21.0 M184.0,442h21.0 M184.0,451h21.0 M184.0,460h21.0 M184.0,469h21.0 M275.0,334h21.0 M275.0,343h21.0 M275.0,352h21.0 M275.0,361h21.0 M275.0,370h21.0 M275.0,379h21.0 M275.0,388h21.0 M275.0,397h21.0 M275.0,406h21.0 M275.0,415h21.0 M275.0,424h21.0 M275.0,433h21.0 M275.0,442h21.0 M275.0,451h21.0 M275.0,460h21.0 M275.0,469h21.0 M102.0,618V782 M122.0,618V782 M82.0,645.3h60 M82.0,672.7h60 M82.0,727.3h60 M82.0,754.7h60 M54.0,628h22.0 M54.0,637h22.0 M54.0,646h22.0 M54.0,655h22.0 M54.0,664h22.0 M54.0,673h22.0 M54.0,682h22.0 M54.0,691h22.0 M54.0,700h22.0 M54.0,709h22.0 M54.0,718h22.0 M54.0,727h22.0 M54.0,736h22.0 M54.0,745h22.0 M54.0,754h22.0 M54.0,763h22.0 M54.0,772h22.0 M148.0,628h22.0 M148.0,637h22.0 M148.0,646h22.0 M148.0,655h22.0 M148.0,664h22.0 M148.0,673h22.0 M148.0,682h22.0 M148.0,691h22.0 M148.0,700h22.0 M148.0,709h22.0 M148.0,718h22.0 M148.0,727h22.0 M148.0,736h22.0 M148.0,745h22.0 M148.0,754h22.0 M148.0,763h22.0 M148.0,772h22.0 M236,664L209.2,648.5 M236,664L220.5,637.2 M236,664L236.0,633.0 M236,664L251.5,637.2 M236,664L262.8,648.5 M213.0,710h19.0v138h-19.0Z M240,710h19.0v138h-19.0Z M280,890H446 M260,908H452 M240,926H458 M220,944H464 M200,962H470 M180,980H476 M300,872L180,998M440,872L476,998" stroke-width="0.8" opacity=".6" vector-effect="non-scaling-stroke"/><path d="M292,52V870M733,40V870 M292,30h441v22h-441Z M346.0,88h64v90h-64Z M346.0,133.0h64 M340.0,178h76v10h-76Z M304.32,88h39.68v90h-39.68Z M412.0,88h39.68v90h-39.68Z M500.0,88h64v90h-64Z M500.0,133.0h64 M494.0,178h76v10h-76Z M458.32,88h39.68v90h-39.68Z M566.0,88h39.68v90h-39.68Z M666.0,88h64v90h-64Z M666.0,133.0h64 M660.0,178h76v10h-76Z M624.32,88h39.68v90h-39.68Z M732.0,88h39.68v90h-39.68Z M348.0,314h64v164h-64Z M348.0,396.0h64 M342.0,478h76v10h-76Z M340.0,292h80v14h-80Z M373,284h14v22h-14Z M306.32,314h39.68v164h-39.68Z M414.0,314h39.68v164h-39.68Z M500.0,314h64v164h-64Z M500.0,396.0h64 M494.0,478h76v10h-76Z M492.0,292h80v14h-80Z M525,284h14v22h-14Z M458.32,314h39.68v164h-39.68Z M566.0,314h39.68v164h-39.68Z M664.0,314h64v164h-64Z M664.0,396.0h64 M658.0,478h76v10h-76Z M656.0,292h80v14h-80Z M689,284h14v22h-14Z M622.32,314h39.68v164h-39.68Z M730.0,314h39.68v164h-39.68Z M325.0,868V668A47.0,47.0 0 0 1 419.0,668V868 M339.0,868V668A33.0,33.0 0 0 1 405.0,668V868 M339.0,704h66 M365,611.0h14v18h-14Z M512.0,628h64v174h-64Z M512.0,715.0h64 M506.0,802h76v10h-76Z M504.0,606h80v14h-80Z M537,598h14v22h-14Z M470.32,628h39.68v174h-39.68Z M578.0,628h39.68v174h-39.68Z M668.0,628h64v174h-64Z M668.0,715.0h64 M662.0,802h76v10h-76Z M660.0,606h80v14h-80Z M693,598h14v22h-14Z M626.32,628h39.68v174h-39.68Z M734.0,628h39.68v174h-39.68Z M292,870H733 M0,64V870 M0,42h292v22h-292Z M83.0,104h58v92h-58Z M83.0,150.0h58 M77.0,196h70v10h-70Z M52.0,104h29.0v92h-29.0Z M143.0,104h29.0v92h-29.0Z M211.0,104h58v92h-58Z M211.0,150.0h58 M205.0,196h70v10h-70Z M180.0,104h29.0v92h-29.0Z M271.0,104h29.0v92h-29.0Z M81.0,324h58v158h-58Z M81.0,403.0h58 M75.0,482h70v10h-70Z M73.0,302h74v14h-74Z M103,294h14v22h-14Z M50.0,324h29.0v158h-29.0Z M141.0,324h29.0v158h-29.0Z M211.0,324h58v158h-58Z M211.0,403.0h58 M205.0,482h70v10h-70Z M203.0,302h74v14h-74Z M233,294h14v22h-14Z M180.0,324h29.0v158h-29.0Z M271.0,324h29.0v158h-29.0Z M82.0,618h60v164h-60Z M82.0,700.0h60 M76.0,782h72v10h-72Z M74.0,596h76v14h-76Z M105,588h14v22h-14Z M50.0,618h30.0v164h-30.0Z M144.0,618h30.0v164h-30.0Z M191.0,860V664A45.0,45.0 0 0 1 281.0,664V860 M205.0,860V664A31.0,31.0 0 0 1 267.0,664V860 M205.0,700h62 M229,609.0h14v18h-14Z M128,0h90v30h-90Z M128,0L173,-22L218,0 M0,870H292 M300,872H440" stroke-width="1.6" vector-effect="non-scaling-stroke"/><path d="M0,1000H733" stroke-width="2.6" vector-effect="non-scaling-stroke"/></g><g stroke="#9db6d6" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M770,1000V30 M762,1000h16 M762,30h16 M762,135h16 M762,395h16 M762,715h16" vector-effect="non-scaling-stroke"/><path d="M0,1040H733 M0,1032v16 M292,1032v16 M733,1032v16" vector-effect="non-scaling-stroke"/></g><g fill="#9db6d6" stroke="none" font-family="JetBrains Mono, monospace" font-size="15" letter-spacing="1"><text x="786" y="140">L3</text><text x="786" y="400">L2</text><text x="786" y="720">L1</text><text x="146" y="1066" text-anchor="middle">UNIT A</text><text x="512" y="1066" text-anchor="middle">UNIT B</text></g></svg></figure>
     </div>
   </section>
 
-  <section class="sheet pad" id="scorecard">
-    <div class="shead"><h2>Score your ML platform</h2><span class="sn">Sht 4 of 5 · Pre-flight check</span></div>
-    <p class="intro">Ten questions on how your team ships and runs models. The score updates as you answer. Sample answers are filled in; change them to match your team.</p>
+  <section class="sec pad" id="scorecard">
+    <div class="head">
+      <h2>Rate your ML platform</h2>
+      <p>Six questions about how your team ships and runs models. Sample answers are filled in; change them to match your team.</p>
+    </div>
     <form class="sc" id="sc-form" onsubmit="return false">
-      <div class="qs"><div class="q"><fieldset><legend><i>Deploy</i>How do models reach production?</legend><div class="opts"><label><input type="radio" name="q0" id="q0-0" value="0"><span>By hand</span></label><label><input type="radio" name="q0" id="q0-1" value="1" checked><span>Scripts</span></label><label><input type="radio" name="q0" id="q0-2" value="2"><span>CI/CD pipeline</span></label><label><input type="radio" name="q0" id="q0-3" value="3"><span>Automated promotion with gates</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Register</i>Where do trained models live?</legend><div class="opts"><label><input type="radio" name="q1" id="q1-0" value="0"><span>Files or notebooks</span></label><label><input type="radio" name="q1" id="q1-1" value="1"><span>Shared storage</span></label><label><input type="radio" name="q1" id="q1-2" value="2" checked><span>Registry, some use</span></label><label><input type="radio" name="q1" id="q1-3" value="3"><span>Registry with lineage, always</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Monitor</i>How do you find out a model degraded?</legend><div class="opts"><label><input type="radio" name="q2" id="q2-0" value="0"><span>Users complain</span></label><label><input type="radio" name="q2" id="q2-1" value="1" checked><span>Ad-hoc checks</span></label><label><input type="radio" name="q2" id="q2-2" value="2"><span>Dashboards</span></label><label><input type="radio" name="q2" id="q2-3" value="3"><span>Drift alerts that trigger action</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Retrain</i>What happens when a model drifts?</legend><div class="opts"><label><input type="radio" name="q3" id="q3-0" value="0"><span>Nothing planned</span></label><label><input type="radio" name="q3" id="q3-1" value="1" checked><span>Manual rebuild</span></label><label><input type="radio" name="q3" id="q3-2" value="2"><span>Scheduled retrain</span></label><label><input type="radio" name="q3" id="q3-3" value="3"><span>Retrain on alert, auto-validated</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Data</i>How reliable are training pipelines?</legend><div class="opts"><label><input type="radio" name="q4" id="q4-0" value="0"><span>Break often</span></label><label><input type="radio" name="q4" id="q4-1" value="1"><span>Work, but fragile</span></label><label><input type="radio" name="q4" id="q4-2" value="2" checked><span>Tested</span></label><label><input type="radio" name="q4" id="q4-3" value="3"><span>Tested, versioned, reproducible</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Cost</i>Do you know what each model costs to run?</legend><div class="opts"><label><input type="radio" name="q5" id="q5-0" value="0"><span>No idea</span></label><label><input type="radio" name="q5" id="q5-1" value="1" checked><span>Total cloud bill only</span></label><label><input type="radio" name="q5" id="q5-2" value="2"><span>Per team</span></label><label><input type="radio" name="q5" id="q5-3" value="3"><span>Per model, reviewed</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Govern</i>Could you pass an audit of a model decision?</legend><div class="opts"><label><input type="radio" name="q6" id="q6-0" value="0"><span>No</span></label><label><input type="radio" name="q6" id="q6-1" value="1" checked><span>With weeks of work</span></label><label><input type="radio" name="q6" id="q6-2" value="2"><span>Mostly</span></label><label><input type="radio" name="q6" id="q6-3" value="3"><span>Yes, from lineage</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Team</i>Who owns a model after it ships?</legend><div class="opts"><label><input type="radio" name="q7" id="q7-0" value="0"><span>Nobody</span></label><label><input type="radio" name="q7" id="q7-1" value="1"><span>The data scientist</span></label><label><input type="radio" name="q7" id="q7-2" value="2" checked><span>A platform team</span></label><label><input type="radio" name="q7" id="q7-3" value="3"><span>Clear owner with on-call</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>Speed</i>Idea to production for a new model?</legend><div class="opts"><label><input type="radio" name="q8" id="q8-0" value="0"><span>Quarters</span></label><label><input type="radio" name="q8" id="q8-1" value="1" checked><span>Months</span></label><label><input type="radio" name="q8" id="q8-2" value="2"><span>Weeks</span></label><label><input type="radio" name="q8" id="q8-3" value="3"><span>Days</span></label></div></fieldset></div><div class="q"><fieldset><legend><i>AI use</i>How does your team use LLMs?</legend><div class="opts"><label><input type="radio" name="q9" id="q9-0" value="0"><span>Not at all</span></label><label><input type="radio" name="q9" id="q9-1" value="1" checked><span>Individuals, unofficially</span></label><label><input type="radio" name="q9" id="q9-2" value="2"><span>Approved tools</span></label><label><input type="radio" name="q9" id="q9-3" value="3"><span>Measured, governed, in workflows</span></label></div></fieldset></div></div>
-      <aside class="sc-result" aria-live="polite">
-        <span class="an">Platform maturity</span>
-        <div class="score"><b class="num" id="sc-n">0</b><span class="an">/ 100</span></div>
+      <div><div class="q"><fieldset><legend>How do models reach production?</legend><div class="opts"><label><input type="radio" name="q0" id="q0-0" value="0"><span>By hand</span></label><label><input type="radio" name="q0" id="q0-1" value="1" checked><span>Scripts</span></label><label><input type="radio" name="q0" id="q0-2" value="2"><span>CI/CD pipeline</span></label><label><input type="radio" name="q0" id="q0-3" value="3"><span>Automated promotion with gates</span></label></div></fieldset></div><div class="q"><fieldset><legend>How do you find out a model has degraded?</legend><div class="opts"><label><input type="radio" name="q1" id="q1-0" value="0"><span>Users complain</span></label><label><input type="radio" name="q1" id="q1-1" value="1" checked><span>Ad-hoc checks</span></label><label><input type="radio" name="q1" id="q1-2" value="2"><span>Dashboards</span></label><label><input type="radio" name="q1" id="q1-3" value="3"><span>Drift alerts that trigger action</span></label></div></fieldset></div><div class="q"><fieldset><legend>What happens when a model drifts?</legend><div class="opts"><label><input type="radio" name="q2" id="q2-0" value="0"><span>Nothing planned</span></label><label><input type="radio" name="q2" id="q2-1" value="1"><span>Manual rebuild</span></label><label><input type="radio" name="q2" id="q2-2" value="2" checked><span>Scheduled retrain</span></label><label><input type="radio" name="q2" id="q2-3" value="3"><span>Retrain on alert, auto-validated</span></label></div></fieldset></div><div class="q"><fieldset><legend>Do you know what each model costs to run?</legend><div class="opts"><label><input type="radio" name="q3" id="q3-0" value="0"><span>No idea</span></label><label><input type="radio" name="q3" id="q3-1" value="1" checked><span>Total cloud bill only</span></label><label><input type="radio" name="q3" id="q3-2" value="2"><span>Per team</span></label><label><input type="radio" name="q3" id="q3-3" value="3"><span>Per model, reviewed</span></label></div></fieldset></div><div class="q"><fieldset><legend>Could you trace one prediction back to its data for an audit?</legend><div class="opts"><label><input type="radio" name="q4" id="q4-0" value="0"><span>No</span></label><label><input type="radio" name="q4" id="q4-1" value="1" checked><span>With weeks of work</span></label><label><input type="radio" name="q4" id="q4-2" value="2"><span>Mostly</span></label><label><input type="radio" name="q4" id="q4-3" value="3"><span>Yes, from lineage</span></label></div></fieldset></div><div class="q"><fieldset><legend>Who owns a model after it ships?</legend><div class="opts"><label><input type="radio" name="q5" id="q5-0" value="0"><span>Nobody</span></label><label><input type="radio" name="q5" id="q5-1" value="1"><span>The data scientist</span></label><label><input type="radio" name="q5" id="q5-2" value="2" checked><span>A platform team</span></label><label><input type="radio" name="q5" id="q5-3" value="3"><span>A named owner with on-call</span></label></div></fieldset></div></div>
+      <aside class="sc-out" aria-live="polite">
+        <span class="lab">Platform maturity</span>
+        <div class="score"><b class="num" id="sc-n">0</b><span class="lab">out of 100</span></div>
         <div class="grade" id="sc-g">—</div>
-        <div class="bars" id="sc-bars"></div>
-        <div><span class="an">Fix first</span><ol class="recs" id="sc-recs"></ol></div>
-        <a class="btn" href="#contact">Book an ML Platform Audit</a>
+        <div><span class="lab">Fix first</span><ol class="recs" id="sc-recs"></ol></div>
+        <a class="btn" href="#contact">Talk to me about an audit</a>
         <p class="note">Scoring runs in your browser. Nothing is sent or stored.</p>
       </aside>
     </form>
   </section>
 
-  <section class="sheet pad" id="thinking">
-    <div class="shead"><h2>I wrote a book on the math behind AI</h2><span class="sn">Sht 5 of 5 · Thinking</span></div>
-    <div class="think">
-      <div>
-        <div class="book">
-          <div class="cover" role="img" aria-label="Math for ML Engineers book cover"><span>Math<br>for ML<br>Engineers</span><small>Backprop → RLHF · 826 pp.</small></div>
-          <div>
-            <span class="an">Author</span>
-            <h3>Math for ML Engineers</h3>
-            <p>826 pages deriving the mathematics of modern AI, from linear algebra to the Transformer, diffusion, RLHF and mechanistic interpretability, with tested code for every algorithm.</p>
-            <a href="https://mikaelyemane.github.io/ml-math-code/index.html">Read about the book ►</a>
-          </div>
+  <section class="sec pad" id="writing">
+    <div class="head"><h2>Writing and speaking</h2></div>
+    <div class="write">
+      <div class="book">
+        <div class="cover" role="img" aria-label="Math for ML Engineers book cover"><span>Math<br>for ML<br>Engineers</span><small>Backprop → RLHF · 826 pp.</small></div>
+        <div>
+          <h3>Math for ML Engineers</h3>
+          <p>826 pages deriving the mathematics of modern AI, from linear algebra to the Transformer, diffusion, RLHF and mechanistic interpretability, with tested code for every algorithm.</p>
+          <a href="https://mikaelyemane.github.io/ml-math-code/index.html">About the book</a>
         </div>
-        <div class="talk"><span class="an">Speaking</span><strong>"MLOps for PHM Systems"</strong><span>PHM Society Asia-Pacific Conference, University of Tokyo</span></div>
       </div>
-      <div>
-        <span class="an">General notes · production AI</span>
-        <ol class="notes" style="margin-top:14px">
-          <li><div><strong>A model isn't done until someone acts on it.</strong><span>I judge ML by the decision it changes: a maintenance alert, a retained account, an inspection route.</span></div></li>
-          <li><div><strong>Cost is a design decision.</strong><span>Architecture cut my team's compute bill by more than half. Most ML budgets carry that much slack.</span></div></li>
-          <li><div><strong>AI leaders should read the math.</strong><span>A derivation tells a real result from a lucky one, and that decides what the team builds next.</span></div></li>
-          <li><div><strong>Adopt AI inside the team first.</strong><span>I rolled out an internal code-generation LLM for my own engineers before recommending AI to anyone else.</span></div></li>
-        </ol>
+      <div class="talk">
+        <span class="lab">Talk</span>
+        <h3>MLOps for PHM systems</h3>
+        <p>PHM Society Asia-Pacific Conference, University of Tokyo.</p>
       </div>
     </div>
-    <div class="bom-wrap">
-      <table class="bom">
-        <thead><tr><th>Item</th><th>Toolbox · bill of materials</th></tr></thead>
+    <div class="tools-wrap">
+      <table class="tools">
         <tbody>
-          <tr><td>01 · ML and data</td><td>PyTorch, TensorFlow, Keras, scikit-learn, MLflow, Spark, pandas, NumPy</td></tr>
-          <tr><td>02 · Cloud and MLOps</td><td>Databricks, Unity Catalog, MLflow, AWS, Azure, Terraform, Kubernetes, Docker, Airflow, GitLab CI/CD, Jenkins</td></tr>
-          <tr><td>03 · LLMs</td><td>Internal code-generation LLM for an engineering team; fine-tuning; accuracy and drift monitoring in production</td></tr>
-          <tr><td>04 · Languages</td><td>Python, SQL, C/C++, Java, R, MATLAB, Bash</td></tr>
-          <tr><td>05 · Mathematics</td><td>Optimization, probability and statistics, time series, stochastic processes, Monte Carlo</td></tr>
-          <tr><td>06 · Clearance</td><td>Active DoD Secret · DHS Public Trust</td></tr>
-          <tr><td>07 · Education</td><td>B.S. Mathematics, B.A. Economics, minor CS · St. Mary's College of Maryland</td></tr>
+          <tr><th>ML and data</th><td>PyTorch, TensorFlow, Keras, scikit-learn, MLflow, Spark, pandas, NumPy</td></tr>
+          <tr><th>Platform</th><td>Databricks, Unity Catalog, AWS, Azure, Terraform, Kubernetes, Docker, Airflow, GitLab CI/CD, Jenkins</td></tr>
+          <tr><th>LLMs</th><td>Internal code-generation LLM, fine-tuning, accuracy and drift monitoring</td></tr>
+          <tr><th>Languages</th><td>Python, SQL, C/C++, Java, R, MATLAB, Bash</td></tr>
+          <tr><th>Math</th><td>Optimization, probability and statistics, time series, stochastic processes, Monte Carlo</td></tr>
+          <tr><th>Clearance</th><td>Active DoD Secret · DHS Public Trust</td></tr>
+          <tr><th>Education</th><td>B.S. Mathematics and B.A. Economics, minor in Computer Science, St. Mary's College of Maryland</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section class="contact pad" id="contact">
-    <span class="an">Issued for review · Contact</span>
-    <h2>Cleared for your next build.</h2>
+    <span class="lab">Contact</span>
+    <h2>Get in touch</h2>
     <div class="crow">
-      <p>Hiring an ML platform leader, or need one for a project? Send a line about the role or the problem. I reply to every message about leadership roles, contract work, speaking and the book.</p>
+      <div>
+        <p>Email is the fastest way to reach me. For a role, include the title and the team. For contract work, a few lines on the problem is enough.</p>
+        <p>My resume is available on request.</p>
+      </div>
       <div class="mailbox">
         <code id="addr">yemanemikaela@gmail.com</code>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" id="copy" type="button">Copy email</button><span class="copied" id="copied" hidden>Copied</span></div>
       </div>
     </div>
-    <div class="links"><a href="https://www.linkedin.com/in/mikael-y-216267436/">LinkedIn ►</a><a href="https://github.com/mikaelyemane">GitHub ►</a><a href="https://mikaelyemane.github.io/ml-math-code/index.html">The book ►</a></div>
+    <div class="links"><a href="https://www.linkedin.com/in/mikael-y-216267436/">LinkedIn</a><a href="https://github.com/mikaelyemane">GitHub</a><a href="https://mikaelyemane.github.io/ml-math-code/index.html">The book</a></div>
   </section>
 
   <footer class="tb">
-    <div>Drawn by<b>M. Yemane</b></div>
-    <div>Title<b>ML Platform Leader</b></div>
-    <div>Location<b>SLC · Remote US</b></div>
-    <div>Rev<b>2026 · E</b></div>
-    <div class="credit">Drawings made from photos. F/A-18F: <a href="https://commons.wikimedia.org/wiki/File:US_Navy_100527-N-3620B-012_An_F-A-18F_Super_Hornet_assigned_to_the_Fighting_Checkmates_of_Strike_Fighter_Squadron_(VFA)_211_flies_over_the_aircraft_carrier_USS_Enterprise_(CVN_65).jpg">U.S. Navy photo</a> by MC3 Bryan Blair, public domain. Boeing 777F: <a href="https://commons.wikimedia.org/wiki/File:Turkish_Cargo_Boeing_777F_(Aircraft-TC-LJR)11.jpg">photo</a> by Fabian Roudra Baroi, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; this tracing is shared under the same license. Row houses: <a href="https://commons.wikimedia.org/wiki/File:Federal_-_Philadelphia,_PA_-_Society_Hill_Row_Houses_(1).jpg">photo</a> by Bmzuckerman, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, redrawn as an elevation; a reference building, not a portfolio property. No affiliation or endorsement implied.</div>
+    <div><span class="lab">Drawn by</span><b>M. Yemane</b></div>
+    <div><span class="lab">Title</span><b>Principal ML Platform Lead</b></div>
+    <div><span class="lab">Location</span><b>SLC · Remote US</b></div>
+    <div><span class="lab">Rev</span><b>2026</b></div>
   </footer>
 </div>
 
@@ -445,21 +475,22 @@ p{margin:0}
   document.getElementById('copy').addEventListener('click', function(){
     var addr=document.getElementById('addr'), msg=document.getElementById('copied');
     function show(t){ msg.textContent=t; msg.hidden=false; setTimeout(function(){msg.hidden=true;},2000); }
-    function fallback(){ var r=document.createRange(); r.selectNodeContents(addr); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); show('Selected, press Ctrl+C'); }
+    function fallback(){ var r=document.createRange(); r.selectNodeContents(addr); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); show('Selected. Press Ctrl+C to copy.'); }
     try{ navigator.clipboard.writeText(addr.textContent).then(function(){show('Copied');}, fallback); }catch(e){ fallback(); }
   });
-  var KEYS=["Deploy", "Register", "Monitor", "Retrain", "Data", "Cost", "Govern", "Team", "Speed", "AI use"], RECS={"Deploy": "Build a CI/CD path with promotion gates so models ship without hand-offs.", "Register": "Put every model in a registry with lineage. It is the base for audit and rollback.", "Monitor": "Add drift and accuracy monitoring with alerts routed to an owner.", "Retrain": "Tie drift alerts to automated retraining and validation.", "Data": "Test and version training pipelines so runs are reproducible.", "Cost": "Tag compute per model so you can see which ones are worth their bill.", "Govern": "Record lineage from data to decision so audits take hours, not weeks.", "Team": "Name an owner and an on-call rotation for every production model.", "Speed": "Standardize templates so a new model reuses the platform instead of rebuilding it.", "AI use": "Roll out approved LLM tooling with usage and cost tracking."};
-  var f=document.getElementById('sc-form'), bars=document.getElementById('sc-bars');
-  KEYS.forEach(function(k,i){ var d=document.createElement('div'); d.className='bar'; d.innerHTML='<span>'+k+'</span><div><i id="bar'+i+'"></i></div><em id="barv'+i+'"></em>'; bars.appendChild(d); });
+  var KEYS=["Deploy", "Monitor", "Retrain", "Cost", "Govern", "Owner"], RECS={"Deploy": "Build a CI/CD path with promotion gates so models ship without hand-offs.", "Monitor": "Add drift and accuracy monitoring with alerts routed to an owner.", "Retrain": "Connect drift alerts to automated retraining and validation.", "Cost": "Tag compute per model so you can see which ones earn their bill.", "Govern": "Record lineage from data to prediction so an audit takes hours, not weeks.", "Owner": "Name an owner and an on-call rotation for every production model."};
+  var f=document.getElementById('sc-form');
   function grade(n){ return n>=85?'Cleared to fly':n>=65?'Airworthy':n>=40?'Needs maintenance':'Grounded'; }
   function run(){
     var vals=KEYS.map(function(k,i){ var c=f.querySelector('input[name="q'+i+'"]:checked'); return c?+c.value:0; });
     var n=Math.round(vals.reduce(function(a,b){return a+b;},0)/(KEYS.length*3)*100);
     document.getElementById('sc-n').textContent=n; document.getElementById('sc-g').textContent=grade(n);
-    vals.forEach(function(v,i){ var b=document.getElementById('bar'+i); b.style.width=(v/3*100)+'%'; b.className=v<=1?'low':''; document.getElementById('barv'+i).textContent=v+'/3'; });
     var order=vals.map(function(v,i){return [v,i];}).sort(function(a,b){return a[0]-b[0]||a[1]-b[1];}).slice(0,3);
-    document.getElementById('sc-recs').innerHTML=order.map(function(o){ var k=KEYS[o[1]]; return '<li><b>'+k+':</b> '+RECS[k]+'</li>'; }).join('');
+    document.getElementById('sc-recs').innerHTML=order.map(function(o){ return '<li>'+RECS[KEYS[o[1]]]+'</li>'; }).join('');
   }
   f.addEventListener('change',run); run();
 })();
 </script>
+
+</body>
+</html>
