@@ -64,6 +64,7 @@ p{margin:0}
 .hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);text-transform:uppercase;letter-spacing:.005em;margin:14px 0 20px}
 .hero h1 span{color:var(--redline)}
 .hero .sub{font-size:1.15rem;color:var(--soft);max-width:34em}
+.avatar{display:block;width:clamp(96px,11vw,128px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 30%;border:2px solid var(--vellum);outline:1px dashed var(--rule);outline-offset:6px;margin:0 0 22px 7px;background:var(--deep)}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .btn{display:inline-block;font-weight:600;font-size:.98rem;padding:12px 20px;text-decoration:none;border:1px solid var(--vellum);background:var(--vellum);color:var(--deep);cursor:pointer;font-family:var(--body)}
 .btn:hover{background:var(--redline);border-color:var(--redline);color:var(--deep)}
@@ -247,6 +248,7 @@ Row houses: photo by Bmzuckerman, CC BY 4.0, https://commons.wikimedia.org/wiki/
 
   <section class="hero pad" aria-label="Introduction">
     <div>
+      <img class="avatar" src="me.jpg" width="128" height="128" alt="Mikael Yemane" decoding="async">
       <span class="lab">Principal ML Platform Lead · Salt Lake City / remote US</span>
       <h1>AI cleared for <span>production</span></h1>
       <p class="sub">I build and lead the MLOps platform behind predictive maintenance for aviation fleets. Over seven years I&rsquo;ve shipped production ML at Microsoft, Okta, PG&amp;E, Accenture and Booz Allen Hamilton, including a Navy prototype that won a $10M+ contract. DoD Secret clearance and DHS Public Trust.</p>
