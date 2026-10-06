@@ -64,18 +64,19 @@ p{margin:0}
 .hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);text-transform:uppercase;letter-spacing:.005em;margin:14px 0 20px}
 .hero h1 span{color:var(--redline)}
 .hero .sub{font-size:1.15rem;color:var(--soft);max-width:34em}
-.byline{display:flex;align-items:center;gap:18px;margin-bottom:10px}
-.byline b{display:block;font-family:var(--display);font-size:1.15rem;line-height:1.2;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
-.avatar{flex:none;width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:2px solid var(--vellum);outline:1px dashed var(--rule);outline-offset:5px;margin:6px;background:var(--deep)}
-@media (max-width:480px){.avatar{width:64px;height:64px}.byline{gap:14px}}
+.byline{display:flex;align-items:center;gap:24px;margin-bottom:14px}
+.byline .lab{font-size:.8rem}
+.byline b{display:block;font-family:var(--display);font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.2;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.avatar{flex:none;width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:2px solid var(--vellum);outline:1px dashed var(--rule);outline-offset:6px;margin:7px;background:var(--deep)}
+@media (max-width:480px){.avatar{width:72px;height:72px;margin:6px;outline-offset:4px}.byline{gap:14px}.byline b{font-size:1.1rem}.byline .lab{font-size:.68rem;letter-spacing:.05em}}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .btn{display:inline-block;font-weight:600;font-size:.98rem;padding:12px 20px;text-decoration:none;border:1px solid var(--vellum);background:var(--vellum);color:var(--deep);cursor:pointer;font-family:var(--body)}
 .btn:hover{background:var(--redline);border-color:var(--redline);color:var(--deep)}
 .btn.o{background:transparent;color:var(--vellum)}
 .btn.o:hover{border-color:var(--redline);color:var(--redline)}
 .hero-art{position:relative;min-width:0;padding-bottom:10px}
-.hero-art .a{width:66%}
-.hero-art .f{width:66%;margin:-14% 0 0 auto}
+.hero-art .a{width:74%}
+.hero-art .f{width:74%;margin:-15% 0 0 auto}
 .hero-art svg{display:block;width:100%;height:auto;color:var(--vellum)}
 @media (max-width:900px){.hero{grid-template-columns:1fr}.hero-art{max-width:520px}}
 
@@ -252,7 +253,7 @@ Row houses: photo by Bmzuckerman, CC BY 4.0, https://commons.wikimedia.org/wiki/
   <section class="hero pad" aria-label="Introduction">
     <div>
       <div class="byline">
-        <img class="avatar" src="me.jpg" width="76" height="76" alt="Mikael Yemane" decoding="async">
+        <img class="avatar" src="me.jpg" width="112" height="112" alt="Mikael Yemane" decoding="async">
         <div><b>Principal Machine Learning Engineer</b><span class="lab">Remote US · SLC / NYC / PHL</span></div>
       </div>
       <h1>AI cleared for <span>production</span></h1>
